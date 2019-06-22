@@ -1,12 +1,14 @@
-package com.DnDSuite.view;
+package com.DnDSuite.view.diceRollerGUI;
 
 import javax.swing.*;
 import java.util.ArrayList;
 
-public class Front extends JFrame{
-    private JTabbedPane tabbedPane1;
-    private JButton selectCampaignButton;
+public class DiceRollerGUI extends JPanel{
+
+    private JPanel rootPanel;
+
     private JTextPane resultDisplay;
+
     private JPanel dicePanel;
     private JPanel D2;
     private JPanel D4;
@@ -17,7 +19,6 @@ public class Front extends JFrame{
     private JPanel D20;
     private JPanel D100;
     private JTextField d2TextField;
-    private JPanel RollButtonPanel;
     private JButton RollButton;
     private JTextField d4TextField;
     private JTextField d6TextField;
@@ -26,13 +27,19 @@ public class Front extends JFrame{
     private JTextField d8TextField;
     private JTextField d12TextField;
     private JTextField d100TextField;
-    private JPanel rootPanel;
+    private JPanel diceRollerPanel;
+    private JPanel RollButtonPanel;
 
-    public Front(){
+    private JPanel modifierPanel;
+    private JTextField modifierTextField;
+    private JRadioButton multRadioButton;
+    private JRadioButton addRadioButton;
+    private JRadioButton subRadioButton;
+    private JRadioButton divRadioButton;
+
+    public DiceRollerGUI(){
+
         add(rootPanel);
-        setTitle("DnD Suite");
-        setSize(600,500);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         ArrayList<JTextField> diceAmounts = new ArrayList<>();
 
@@ -61,10 +68,28 @@ public class Front extends JFrame{
         d100TextField.setText("0");
         diceAmounts.add(d100TextField);
 
-        RollButton.addActionListener(new RollButtonListener(diceAmounts, resultDisplay));
+
+        addRadioButton.setActionCommand("Add");
+        subRadioButton.setActionCommand("Sub");
+        multRadioButton.setActionCommand("Mult");
+        divRadioButton.setActionCommand("Div");
+
+        modifierTextField.setName("modifierTextField");
+        modifierTextField.setText("0");
+        ButtonGroup bg = new ButtonGroup();
+        bg.add(addRadioButton);
+        bg.add(subRadioButton);
+        bg.add(multRadioButton);
+        bg.add(divRadioButton);
+
+        RollButton.addActionListener(new RollButtonListener(diceAmounts, bg, modifierTextField,resultDisplay));
     }
 
     private void createUIComponents() {
         // TODO: place custom component creation code here
+    }
+
+    public JPanel getRootPanel(){
+        return rootPanel;
     }
 }

@@ -1,6 +1,5 @@
 package com.DnDSuite.controller;
 
-import com.DnDSuite.view.Front;
 import com.marsG.simplerandomorglib.RandomIntegerClient;
 
 import java.io.IOException;

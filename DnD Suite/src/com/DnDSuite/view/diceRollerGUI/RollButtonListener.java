@@ -1,4 +1,4 @@
-package com.DnDSuite.view;
+package com.DnDSuite.view.diceRollerGUI;
 
 import com.DnDSuite.controller.DiceRollerController;
 
@@ -7,6 +7,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Enumeration;
 
 public class RollButtonListener implements ActionListener {
 
@@ -14,11 +15,16 @@ public class RollButtonListener implements ActionListener {
     private JTextPane resultDisplay;
     private ArrayList<JTextField> diceAmounts;
     private ArrayList<Integer> rollResults;
+    private JTextField modifierTextField;
+    private ButtonGroup modifierBG;
+
     private int[] numOfRollsArr;
 
-    public RollButtonListener(ArrayList diceAmounts, JTextPane resultDisplay){
+    public RollButtonListener(ArrayList diceAmounts, ButtonGroup modifierBG, JTextField modifierTextField,JTextPane resultDisplay){
         diceRollerController = new DiceRollerController();
 
+        this.modifierTextField = modifierTextField;
+        this.modifierBG = modifierBG;
         this.diceAmounts=diceAmounts;
         this.resultDisplay = resultDisplay;
         this.rollResults = new ArrayList<>();
@@ -90,11 +96,36 @@ public class RollButtonListener implements ActionListener {
         for (Integer i: rollResults) {
             sum += i;
         }
+
         rollResults.clear();
-        resultDisplay.setText("Rolled "+numOfRollsArr[0]+"d2, " + numOfRollsArr[1]+"d4, " + numOfRollsArr[2]+"d6, "+
+
+        String modifierOP = "";
+        Integer newSum = sum;
+        switch(modifierBG.getSelection().getActionCommand()){
+            case "Add":
+                newSum+=Integer.parseInt(modifierTextField.getText());
+                modifierOP = "+";
+                break;
+            case "Sub":
+                newSum-=Integer.parseInt(modifierTextField.getText());
+                modifierOP = "-";
+                break;
+            case "Mult":
+                newSum*=Integer.parseInt(modifierTextField.getText());
+                modifierOP = "*";
+                break;
+            case "Div":
+                newSum/=Integer.parseInt(modifierTextField.getText());
+                modifierOP = "/";
+                break;
+        }
+
+        String resultText = "Rolled "+numOfRollsArr[0]+"d2, " + numOfRollsArr[1]+"d4, " + numOfRollsArr[2]+"d6, "+
                 numOfRollsArr[3]+"d8, " + numOfRollsArr[4]+"d10, " + numOfRollsArr[5]+"d12, " + numOfRollsArr[6]+"d20, "+
                 numOfRollsArr[7]+"d100."+
-                "\nResult: " + sum.toString() + "\nAverage: " + avg);
+                "\nResult: " + sum.toString() + " "+ modifierOP +" "+(modifierTextField.getText() + "= " +newSum.toString() +"\nAverage: " + avg);
+
+        resultDisplay.setText(resultText);
 
     }
 
