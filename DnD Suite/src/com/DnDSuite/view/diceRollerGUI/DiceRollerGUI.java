@@ -70,6 +70,7 @@ public class DiceRollerGUI extends JPanel{
 
 
         addRadioButton.setActionCommand("Add");
+        addRadioButton.setSelected(true);
         subRadioButton.setActionCommand("Sub");
         multRadioButton.setActionCommand("Mult");
         divRadioButton.setActionCommand("Div");
@@ -81,7 +82,6 @@ public class DiceRollerGUI extends JPanel{
         bg.add(subRadioButton);
         bg.add(multRadioButton);
         bg.add(divRadioButton);
-
         RollButton.addActionListener(new RollButtonListener(diceAmounts, bg, modifierTextField,resultDisplay));
     }
 
