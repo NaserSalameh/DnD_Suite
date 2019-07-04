@@ -24,19 +24,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/model/Stat.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="33" selection-start-line="33" selection-end-line="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/view/playersGUI/PlayersGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="72" selection-start-line="72" selection-end-line="72" />
+            <state relative-caret-position="436">
+              <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1413#1433#0" expanded="true" />
@@ -45,23 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/controller/InitiativeController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/controller/PlayersController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="36" column="35" lean-forward="true" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
+            <state relative-caret-position="322">
+              <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,18 +60,6 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/view/playersGUI/PlayersGUI.form">
           <provider selected="true" editor-type-id="ui-designer" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/view/frontGUI/FrontGUI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
         </entry>
       </file>
     </leaf>
@@ -130,7 +97,6 @@
         <option value="$PROJECT_DIR$/src/com/DnDSuite/view/diceRollerGUI/DiceRollerGUI.form" />
         <option value="$PROJECT_DIR$/src/com/DnDSuite/controller/Main.java" />
         <option value="$PROJECT_DIR$/src/com/DnDSuite/model/Entity.java" />
-        <option value="$PROJECT_DIR$/src/com/DnDSuite/view/initiativeGUI/InitiativeGUI.java" />
         <option value="$PROJECT_DIR$/src/com/DnDSuite/view/initiativeGUI/InitiativeGUI.form" />
         <option value="$PROJECT_DIR$/src/com/DnDSuite/model/Class.java" />
         <option value="$PROJECT_DIR$/src/com/DnDSuite/view/frontGUI/FrontGUI.java" />
@@ -138,9 +104,10 @@
         <option value="$PROJECT_DIR$/src/com/DnDSuite/view/playersGUI/PlayersGUI.form" />
         <option value="$PROJECT_DIR$/src/com/DnDSuite/model/Player.java" />
         <option value="$PROJECT_DIR$/src/com/DnDSuite/view/playersGUI/PlayersListSelectionListener.java" />
-        <option value="$PROJECT_DIR$/src/com/DnDSuite/controller/InitiativeController.java" />
         <option value="$PROJECT_DIR$/src/com/DnDSuite/view/playersGUI/PlayersGUI.java" />
         <option value="$PROJECT_DIR$/src/com/DnDSuite/controller/PlayersController.java" />
+        <option value="$PROJECT_DIR$/src/com/DnDSuite/view/initiativeGUI/InitiativeGUI.java" />
+        <option value="$PROJECT_DIR$/src/com/DnDSuite/controller/InitiativeController.java" />
       </list>
     </option>
   </component>
@@ -220,6 +187,15 @@
               <item name="DnDSuite" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
               <item name="initiativeGUI" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DnD Suite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DnD Suite" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DnDSuite" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="initiativeGUI" type="462c0819:PsiDirectoryNode" />
+              <item name="InitiativeGUI" type="e9f4de52:FormNode" />
             </path>
             <path>
               <item name="DnD Suite" type="b2602c69:ProjectViewProjectNode" />
@@ -326,12 +302,12 @@
       <workItem from="1561235341992" duration="2965000" />
       <workItem from="1561310135731" duration="15446000" />
       <workItem from="1562175313178" duration="1324000" />
-      <workItem from="1562245638411" duration="5834000" />
+      <workItem from="1562245638411" duration="8582000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47142000" />
+    <option name="totallyTimeSpent" value="49890000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
@@ -425,9 +401,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/view/initiativeGUI/InitiativeGUI.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/model/Entity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -473,16 +446,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="57" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/view/initiativeGUI/InitiativeGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -545,18 +508,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/controller/InitiativeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="374">
+          <caret line="39" column="43" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1091#1092#0" expanded="true" />
+            <element signature="e#1130#1131#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/view/initiativeGUI/InitiativeGUI.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/view/initiativeGUI/InitiativeGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="48" column="56" lean-forward="true" selection-start-line="48" selection-start-column="56" selection-end-line="48" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2465#2466#0" expanded="true" />
+            <element signature="e#2689#2690#0" expanded="true" />
+            <element signature="e#2936#2937#0" expanded="true" />
+            <element signature="e#2968#2969#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/view/playersGUI/PlayersGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="72" selection-start-line="72" selection-end-line="72" />
+        <state relative-caret-position="436">
+          <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1413#1433#0" expanded="true" />
@@ -566,8 +548,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/controller/PlayersController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="36" column="35" lean-forward="true" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
+        <state relative-caret-position="322">
+          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

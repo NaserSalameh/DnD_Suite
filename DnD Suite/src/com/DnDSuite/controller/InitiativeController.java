@@ -6,25 +6,38 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class InitiativeController {
 
     private JList playerslList;
+    private HashMap<String,Player> mockPlayers;
 
     public InitiativeController(JList playerslList){
 
         //find better way to incorporate after data is set
-        ArrayList<Player> mockPlayers = new ArrayList<>();
+        mockPlayers = new HashMap<String,Player>();
+
         int[] abilities = {10,10,10,10,10,10};
-        mockPlayers.add(new Player("Zenithar","Tiefling","Aris",13,200,abilities,100,30,2));
+        Player player1 = new Player("Zenithar","Tiefling","Aris",13,200,abilities,100,30,2);
+        mockPlayers.put("Zenithar",player1);
 
         this.playerslList = playerslList;
 
         DefaultListModel  model = new DefaultListModel();
         this.playerslList.setModel(model);
 
-        for (int i= 0 ; i <mockPlayers.size(); i++)
-            model.add(i, mockPlayers.get(i).getName() + " (" +mockPlayers.get(i).getPlayerStat().getHealth() + ")");
+        int index=0;
+        for(Map.Entry<String,Player> entry: mockPlayers.entrySet()) {
+            model.add(index,entry.getKey());
+            index++;
+        }
+
+    }
+
+    public Player getPlayer(String playerName){
+        return mockPlayers.get(playerName);
     }
 
     public void sortPlayers(DefaultTableModel model){
@@ -36,8 +49,6 @@ public class InitiativeController {
                 break;
             }
         }
-
-
     }
 
     public void nextTurn(DefaultTableModel model){

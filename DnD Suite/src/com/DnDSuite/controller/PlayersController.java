@@ -11,6 +11,8 @@ import java.util.Map;
 public class PlayersController {
         private JList playerslList;
         private HashMap<String,JTextField> textFields;
+        private HashMap<String, Player> mockPlayers;
+
 
         public PlayersController(JList playerslList, HashMap<String, JTextField> textFields) {
 
@@ -19,25 +21,30 @@ public class PlayersController {
 
 
             //find better way to incorporate after data is set
-            ArrayList<Player> mockPlayers = new ArrayList<>();
-
+            mockPlayers = new HashMap<String,Player>();
 
             int[] abilities = {10,10,10,10,10,10};
             Player player1 = new Player("Zenithar","Tiefling","Aris",13,200,abilities,100,30,2);
-            mockPlayers.add(player1);
+            mockPlayers.put("Zenithar",player1);
 
 
             DefaultListModel model = new DefaultListModel();
             this.playerslList.setModel(model);
 
             //fix with hashmaps?
-            for (int i = 0; i < mockPlayers.size(); i++)
-                model.add(i, mockPlayers.get(i));
+            int index=0;
+            for(Map.Entry<String,Player> entry: mockPlayers.entrySet()) {
+                model.add(index,entry.getKey());
+                index++;
+            }
 
-            setTextFields(player1);
+            setTextFields(player1.getName());
         }
 
-        public void setTextFields(Player selectedPlayer){
+        public void setTextFields(String playerName){
+
+            Player selectedPlayer = mockPlayers.get(playerName);
+
             for(Map.Entry<String,JTextField> entry: textFields.entrySet()){
                 textFields.get("name").setText(selectedPlayer.getName());
                 textFields.get("race").setText(selectedPlayer.getRace());

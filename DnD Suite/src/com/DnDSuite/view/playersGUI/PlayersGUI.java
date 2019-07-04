@@ -70,7 +70,7 @@ public class PlayersGUI extends JPanel {
         playerList.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
-                playersController.setTextFields((Player)playerList.getSelectedValue());
+                playersController.setTextFields((String) playerList.getSelectedValue());
             }
         });
 
