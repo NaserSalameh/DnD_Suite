@@ -2,7 +2,7 @@
   <library name="doc">
     <CLASSES />
     <JAVADOC>
-      <root url="file://$PROJECT_DIR$/../../../../../Downloads/random.org-simpleclient-master/random.org-simpleclient-master/doc" />
+      <root url="file://$PROJECT_DIR$/libs/random.org-simpleclient-master/random.org-simpleclient-master/doc" />
     </JAVADOC>
     <SOURCES />
   </library>

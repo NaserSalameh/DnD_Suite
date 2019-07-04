@@ -15,7 +15,8 @@ public class InitiativeController {
 
         //find better way to incorporate after data is set
         ArrayList<Player> mockPlayers = new ArrayList<>();
-        mockPlayers.add(new Player("Seb"));
+        int[] abilities = {10,10,10,10,10,10};
+        mockPlayers.add(new Player("Zenithar","Tiefling","Aris",13,200,abilities,100,30,2));
 
         this.playerslList = playerslList;
 
@@ -23,7 +24,7 @@ public class InitiativeController {
         this.playerslList.setModel(model);
 
         for (int i= 0 ; i <mockPlayers.size(); i++)
-            model.add(i, mockPlayers.get(i).getName() + " (" +mockPlayers.get(i).getHealth() + ")");
+            model.add(i, mockPlayers.get(i).getName() + " (" +mockPlayers.get(i).getPlayerStat().getHealth() + ")");
     }
 
     public void sortPlayers(DefaultTableModel model){
