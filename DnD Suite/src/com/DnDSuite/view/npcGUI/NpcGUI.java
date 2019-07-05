@@ -1,6 +1,6 @@
-package com.DnDSuite.view.playersGUI;
+package com.DnDSuite.view.npcGUI;
 
-import com.DnDSuite.controller.creatureController.PlayerController;
+import com.DnDSuite.controller.creatureController.NpcController;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -9,26 +9,23 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.HashMap;
 
-public class PlayersGUI extends JPanel {
+public class NpcGUI extends JPanel {
 
-
-
-    private JList playersList;
-    private JPanel playersPanel;
-    private JPanel playerPortrait;
-    private JPanel playerStats;
-    private JPanel playerDetails;
+    private JList npcList;
+    private JPanel npcPanel;
+    private JPanel npcPortrait;
+    private JPanel npcStats;
+    private JPanel npcDetails;
     private JTextField nameTextField;
     private JTextField raceTextField;
-    private JTextField playerTextField;
-    private JPanel playerDescription;
+    private JTextField npcTextField;
+    private JPanel npcDescription;
     private JButton newButton;
     private JButton editButton;
     private JTextField expTextField;
     private JTextField constitutionTextField;
     private JTextField speedTextField;
     private JTextField strengthTextField;
-    private JProgressBar expProgressBar;
     private JTextField wisdomTextField;
     private JTextField charismaTextField;
     private JTextField descriptionTextField;
@@ -40,16 +37,14 @@ public class PlayersGUI extends JPanel {
     private JTextField levelTextField;
 
 
-    public PlayersGUI(){
+    public NpcGUI(){
 
         add(rootPanel);
-
 
         HashMap<String,JTextField> textFields = new HashMap<String, JTextField>();
 
         textFields.put("name",nameTextField);
         textFields.put("race",raceTextField);
-        textFields.put("player",playerTextField);
         textFields.put("level",levelTextField);
         textFields.put("exp",expTextField);
         textFields.put("health",healthTextField);
@@ -62,22 +57,21 @@ public class PlayersGUI extends JPanel {
         textFields.put("speed",speedTextField);
         textFields.put("initiative",initiativeTextField);
 
-        PlayerController playerController = new PlayerController(playersList,textFields);
+        NpcController npcController = new NpcController(npcList,textFields);
 
-        DefaultListModel model = (DefaultListModel) playersList.getModel();
+        DefaultListModel model = (DefaultListModel) npcList.getModel();
 
-        playersList.addListSelectionListener(new ListSelectionListener() {
+        npcList.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
-                playerController.setTextFields((String) playersList.getSelectedValue(), playerTextField);
-                playerController.setProgressBar(expProgressBar, (String) playersList.getSelectedValue());
+                npcController.setTextFields((String) npcList.getSelectedValue());
             }
         });
 
         newButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                playerController.newCreature();
+                npcController.newCreature();
                 model.add(model.getSize(), nameTextField.getText());
             }
         });
@@ -85,7 +79,7 @@ public class PlayersGUI extends JPanel {
         editButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                playerController.editCreature();
+                npcController.editCreature();
             }
         });
     }

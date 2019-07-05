@@ -44,7 +44,7 @@ public class InitiativeGUI extends JPanel{
             @Override
             public void actionPerformed(ActionEvent e) {
                 Player player = initiativeController.getPlayer((String) playersList.getSelectedValue());
-                model.addRow( new Object[] {player.getName(),Integer.parseInt(initativeTextField.getText()) + player.getPlayerStat().getInitiative(),player.getPlayerStat().getHealth()});
+                model.addRow( new Object[] {player.getName(),Integer.parseInt(initativeTextField.getText()) + player.getStat().getInitiative(),player.getStat().getHealth()});
                 initiativeController.sortPlayers(model);
             }
         });

@@ -2,6 +2,7 @@ package com.DnDSuite.view.frontGUI;
 
 import com.DnDSuite.view.diceRollerGUI.DiceRollerGUI;
 import com.DnDSuite.view.initiativeGUI.InitiativeGUI;
+import com.DnDSuite.view.npcGUI.NpcGUI;
 import com.DnDSuite.view.playersGUI.PlayersGUI;
 
 import javax.swing.*;
@@ -13,6 +14,8 @@ public class FrontGUI extends JFrame {
     private DiceRollerGUI diceRollerGUI;
     private InitiativeGUI initiativeGUI;
     private PlayersGUI playersGUI;
+    private NpcGUI npcGUI;
+
 
     public FrontGUI(){
 
@@ -35,6 +38,9 @@ public class FrontGUI extends JFrame {
 
         playersGUI = new PlayersGUI();
         tabbedPane.add("Players", playersGUI.getRootPanel());
+
+        npcGUI = new NpcGUI();
+        tabbedPane.add("NPC", npcGUI.getRootPanel());
 
     }
 
