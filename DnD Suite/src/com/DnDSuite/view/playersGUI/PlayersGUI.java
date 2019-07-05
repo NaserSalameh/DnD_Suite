@@ -16,7 +16,7 @@ public class PlayersGUI extends JPanel {
 
 
 
-    private JList playerList;
+    private JList playersList;
     private JPanel playerPanel;
     private JPanel playerPortrait;
     private JPanel playerStats;
@@ -65,24 +65,33 @@ public class PlayersGUI extends JPanel {
         textFields.put("speed",speedTextField);
         textFields.put("initiative",initiativeTextField);
 
-        PlayersController playersController = new PlayersController(playerList,textFields);
+        PlayersController playersController = new PlayersController(playersList,textFields);
 
-        playerList.addListSelectionListener(new ListSelectionListener() {
+        DefaultListModel model = (DefaultListModel) playersList.getModel();
+
+        playersList.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
-                playersController.setTextFields((String) playerList.getSelectedValue());
+                playersController.setTextFields((String) playersList.getSelectedValue());
+                playersController.setProgressBar(expProgressBar, (String) playersList.getSelectedValue());
             }
         });
 
         newButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                playersController.newPlayer();
+                model.add(model.getSize(), nameTextField.getText());
             }
         });
 
+        editButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                playersController.editPlayer();
+            }
+        });
     }
 
     public JPanel getRootPanel(){ return rootPanel;}
-
 }

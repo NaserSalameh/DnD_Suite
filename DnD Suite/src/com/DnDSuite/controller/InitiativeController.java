@@ -20,7 +20,7 @@ public class InitiativeController {
         mockPlayers = new HashMap<String,Player>();
 
         int[] abilities = {10,10,10,10,10,10};
-        Player player1 = new Player("Zenithar","Tiefling","Aris",13,200,abilities,100,30,2);
+        Player player1 = new Player("Zenithar","Tiefling","Aris");
         mockPlayers.put("Zenithar",player1);
 
         this.playerslList = playerslList;
@@ -33,7 +33,6 @@ public class InitiativeController {
             model.add(index,entry.getKey());
             index++;
         }
-
     }
 
     public Player getPlayer(String playerName){

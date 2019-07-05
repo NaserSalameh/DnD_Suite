@@ -6,11 +6,20 @@ public class Player extends Entity {
     private String race;
     private String player;
 
-    public Player(String name, String race, String player,int level, int exp,int[] ability, int health,int speed, int initiative){
+    public Player(String name, String race, String player,Stat playerStat){
         super(name);
         this.race = race;
         this.player = player;
-        playerStat=new Stat(level, exp, ability, health,speed,initiative);
+        this.playerStat=playerStat;
+    }
+
+    public Player(String name, String race, String player){
+        super(name);
+        this.race = race;
+        this.player = player;
+
+        int[] abilities = {10,10,10,10,10,10};
+        this.playerStat= new Stat(1,0,abilities,10,30,0);
     }
 
     public Stat getPlayerStat(){
