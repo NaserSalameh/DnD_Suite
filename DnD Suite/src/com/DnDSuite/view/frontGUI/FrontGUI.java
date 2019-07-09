@@ -1,23 +1,25 @@
 package com.DnDSuite.view.frontGUI;
 
+import com.DnDSuite.model.Campaign;
 import com.DnDSuite.view.diceRollerGUI.DiceRollerGUI;
 import com.DnDSuite.view.initiativeGUI.InitiativeGUI;
-import com.DnDSuite.view.npcGUI.NpcGUI;
 import com.DnDSuite.view.playersGUI.PlayersGUI;
 
 import javax.swing.*;
 
 public class FrontGUI extends JFrame {
 
+    private Campaign campaign;
+
     private JPanel rootPanel;
     private JTabbedPane tabbedPane;
     private DiceRollerGUI diceRollerGUI;
     private InitiativeGUI initiativeGUI;
     private PlayersGUI playersGUI;
-    private NpcGUI npcGUI;
 
+    public FrontGUI(Campaign campaign){
 
-    public FrontGUI(){
+        this.campaign= campaign;
 
         //rootPanel = new JPanel();
         //add(rootPanel);
@@ -33,14 +35,14 @@ public class FrontGUI extends JFrame {
         diceRollerGUI = new DiceRollerGUI();
         tabbedPane.add("Dice Roller", diceRollerGUI.getRootPanel());
 
-        initiativeGUI = new InitiativeGUI();
+        initiativeGUI = new InitiativeGUI(campaign.data.getPlayers());
         tabbedPane.add("Initiative", initiativeGUI.getRootPanel());
 
-        playersGUI = new PlayersGUI();
+        playersGUI = new PlayersGUI(campaign.data);
         tabbedPane.add("Players", playersGUI.getRootPanel());
-
-        npcGUI = new NpcGUI();
-        tabbedPane.add("NPC", npcGUI.getRootPanel());
+//
+//        npcGUI = new NpcGUI(campaign.getNpcs());
+//        tabbedPane.add("Npc", npcGUI.getRootPanel());
 
     }
 

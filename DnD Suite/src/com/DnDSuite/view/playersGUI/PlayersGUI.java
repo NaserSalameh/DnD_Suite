@@ -1,6 +1,7 @@
 package com.DnDSuite.view.playersGUI;
 
-import com.DnDSuite.controller.creatureController.PlayerController;
+import com.DnDSuite.controller.PlayerController;
+import com.DnDSuite.model.CampaignData;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -10,8 +11,6 @@ import java.awt.event.ActionListener;
 import java.util.HashMap;
 
 public class PlayersGUI extends JPanel {
-
-
 
     private JList playersList;
     private JPanel playersPanel;
@@ -39,12 +38,15 @@ public class PlayersGUI extends JPanel {
     private JTextField levelTextField;
     private JComboBox classComboBox;
     private JComboBox raceComboBox;
+    private JComboBox subClassComboBox;
 
+    private CampaignData data;
 
-    public PlayersGUI(){
+    public PlayersGUI(CampaignData data){
+
+        this.data = data;
 
         add(rootPanel);
-
 
         HashMap<String,JTextField> textFields = new HashMap<String, JTextField>();
 
@@ -62,14 +64,14 @@ public class PlayersGUI extends JPanel {
         textFields.put("speed",speedTextField);
         textFields.put("initiative",initiativeTextField);
 
-        PlayerController playerController = new PlayerController(playersList,textFields,raceComboBox,classComboBox);
+        PlayerController playerController = new PlayerController(data,playersList,textFields,raceComboBox,classComboBox,subClassComboBox);
 
         DefaultListModel model = (DefaultListModel) playersList.getModel();
 
         playersList.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
-                playerController.setFields((String) playersList.getSelectedValue(), playerTextField);
+                playerController.setFields((String) playersList.getSelectedValue());
                 playerController.setProgressBar(expProgressBar, (String) playersList.getSelectedValue());
             }
         });
@@ -77,7 +79,7 @@ public class PlayersGUI extends JPanel {
         newButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                playerController.newCreature();
+                playerController.newCreature(nameTextField.getText());
                 model.add(model.getSize(), nameTextField.getText());
             }
         });
@@ -85,7 +87,8 @@ public class PlayersGUI extends JPanel {
         editButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                playerController.editCreature();
+
+                playerController.editCreature(nameTextField.getText(),playersList.getSelectedIndex());
             }
         });
     }

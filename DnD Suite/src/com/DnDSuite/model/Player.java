@@ -10,7 +10,7 @@ public class Player extends Creature {
     }
 
     public Player(String name, String race, String creatureClass, String player){
-        super(name,race);
+        super(name,race,creatureClass);
         this.player = player;
     }
 

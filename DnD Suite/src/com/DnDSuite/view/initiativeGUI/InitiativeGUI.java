@@ -7,8 +7,12 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class InitiativeGUI extends JPanel{
+
+    private ArrayList<Player> players;
+
     private JPanel rootPanel;
     private JTable playersInCombat;
     private JButton addButton;
@@ -17,7 +21,7 @@ public class InitiativeGUI extends JPanel{
     private JTextField initativeTextField;
     private JButton addNPCButton;
     private JButton nextTurnButton;
-    private JPanel players;
+    private JPanel playersPanel;
     private JList playersList;
     private JTextField npcNameTextField;
     private JButton healthButton;
@@ -25,10 +29,10 @@ public class InitiativeGUI extends JPanel{
     private JTextField npcHealthTextField;
 
 
-    public InitiativeGUI(){
+    public InitiativeGUI(ArrayList<Player> players){
         add(rootPanel);
 
-        InitiativeController initiativeController = new InitiativeController(playersList);
+        InitiativeController initiativeController = new InitiativeController(players,playersList);
 
         initativeTextField.setText("0");
         healthTextField.setText("0");

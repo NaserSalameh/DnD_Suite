@@ -13,9 +13,10 @@ public class Creature extends Entity {
         this.stat=playerStat;
     }
 
-    public Creature(String name, String race){
+    public Creature(String name, String race,String creatureClass){
         super(name);
         this.race = race;
+        this.creatureClass = creatureClass;
 
         int[] abilities = {10,10,10,10,10,10};
         this.stat= new Stat(1,0,abilities,10,30,0);
@@ -36,5 +37,9 @@ public class Creature extends Entity {
     public String getCreatureClass(){return this.creatureClass;}
 
     public void setCreatureClass(String creatureClass){ this.creatureClass = creatureClass; }
+
+    public Player toPlayer(String player){
+        return new Player(super.getName(),race,creatureClass,player,stat);
+    }
 
 }

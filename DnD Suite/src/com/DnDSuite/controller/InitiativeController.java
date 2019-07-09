@@ -4,39 +4,39 @@ import com.DnDSuite.model.Player;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.JTableHeader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class InitiativeController {
 
-    private JList playerslList;
-    private HashMap<String,Player> mockPlayers;
+    private ArrayList<Player> players;
+    private JList playersList;
+    private HashMap<String,Player> playerHashMap;
 
-    public InitiativeController(JList playerslList){
+    public InitiativeController(ArrayList<Player> players,JList playersList){
 
-        //find better way to incorporate after data is set
-        mockPlayers = new HashMap<String,Player>();
+        this.players= players;
 
-        int[] abilities = {10,10,10,10,10,10};
-        Player player1 = new Player("Zenithar","Tiefling","Fighter","Aris");
-        mockPlayers.put("Zenithar",player1);
+        playerHashMap = new HashMap<String,Player>();
 
-        this.playerslList = playerslList;
+        for(Player p: players)
+            playerHashMap.put(p.getName(),p);
+
+        this.playersList = playersList;
 
         DefaultListModel  model = new DefaultListModel();
-        this.playerslList.setModel(model);
+        this.playersList.setModel(model);
 
         int index=0;
-        for(Map.Entry<String,Player> entry: mockPlayers.entrySet()) {
+        for(Map.Entry<String,Player> entry: playerHashMap.entrySet()) {
             model.add(index,entry.getKey());
             index++;
         }
     }
 
     public Player getPlayer(String playerName){
-        return mockPlayers.get(playerName);
+        return playerHashMap.get(playerName);
     }
 
     public void sortPlayers(DefaultTableModel model){
