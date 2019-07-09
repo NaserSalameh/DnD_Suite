@@ -10,8 +10,8 @@ public class NpcController extends CreatureController {
 
     private HashMap<String, NPC> mockPlayers;
 
-    public NpcController(JList playerslList, HashMap<String, JTextField> textFields) {
-        super(playerslList, textFields);
+    public NpcController(JList playerslList, HashMap<String, JTextField> textFields, JComboBox raceComboBox, JComboBox classComboBox) {
+        super(playerslList, textFields, raceComboBox, classComboBox);
     }
 
 }

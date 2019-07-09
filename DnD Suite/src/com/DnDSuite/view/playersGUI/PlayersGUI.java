@@ -19,7 +19,6 @@ public class PlayersGUI extends JPanel {
     private JPanel playerStats;
     private JPanel playerDetails;
     private JTextField nameTextField;
-    private JTextField raceTextField;
     private JTextField playerTextField;
     private JPanel playerDescription;
     private JButton newButton;
@@ -38,6 +37,8 @@ public class PlayersGUI extends JPanel {
     private JTextField intelligenceTextField;
     private JPanel rootPanel;
     private JTextField levelTextField;
+    private JComboBox classComboBox;
+    private JComboBox raceComboBox;
 
 
     public PlayersGUI(){
@@ -48,7 +49,6 @@ public class PlayersGUI extends JPanel {
         HashMap<String,JTextField> textFields = new HashMap<String, JTextField>();
 
         textFields.put("name",nameTextField);
-        textFields.put("race",raceTextField);
         textFields.put("player",playerTextField);
         textFields.put("level",levelTextField);
         textFields.put("exp",expTextField);
@@ -62,14 +62,14 @@ public class PlayersGUI extends JPanel {
         textFields.put("speed",speedTextField);
         textFields.put("initiative",initiativeTextField);
 
-        PlayerController playerController = new PlayerController(playersList,textFields);
+        PlayerController playerController = new PlayerController(playersList,textFields,raceComboBox,classComboBox);
 
         DefaultListModel model = (DefaultListModel) playersList.getModel();
 
         playersList.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
-                playerController.setTextFields((String) playersList.getSelectedValue(), playerTextField);
+                playerController.setFields((String) playersList.getSelectedValue(), playerTextField);
                 playerController.setProgressBar(expProgressBar, (String) playersList.getSelectedValue());
             }
         });

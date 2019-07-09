@@ -8,8 +8,8 @@ import java.util.HashMap;
 
 public class PlayerController extends CreatureController {
 
-    public PlayerController(JList playerslList, HashMap<String, JTextField> textFields) {
-        super(playerslList, textFields);
+    public PlayerController(JList playerslList, HashMap<String, JTextField> textFields, JComboBox raceComboBox, JComboBox classComboBox) {
+        super(playerslList, textFields, raceComboBox, classComboBox);
     }
 
     public void setProgressBar(JProgressBar progressBar, String playerName) {
@@ -22,10 +22,10 @@ public class PlayerController extends CreatureController {
         progressBar.setValue(playerExp);
     }
 
-    public void setTextFields(String playerName, JTextField playerTextField){
+    public void setFields(String playerName, JTextField playerTextField){
         Player selectedPlayer = (Player) super.mockCreatures.get(playerName);
 
-        super.setTextFields(playerName);
+        super.setFields(playerName);
         playerTextField.setText(selectedPlayer.getPlayer());
     }
 

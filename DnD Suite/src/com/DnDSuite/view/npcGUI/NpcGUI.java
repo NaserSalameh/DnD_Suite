@@ -35,6 +35,8 @@ public class NpcGUI extends JPanel {
     private JTextField intelligenceTextField;
     private JPanel rootPanel;
     private JTextField levelTextField;
+    private JComboBox classComboBox;
+    private JComboBox raceComboBox;
 
 
     public NpcGUI(){
@@ -42,9 +44,11 @@ public class NpcGUI extends JPanel {
         add(rootPanel);
 
         HashMap<String,JTextField> textFields = new HashMap<String, JTextField>();
+        HashMap<String,JComboBox> comboBoxes = new HashMap<String, JComboBox>();
 
         textFields.put("name",nameTextField);
-        textFields.put("race",raceTextField);
+        comboBoxes.put("race",raceComboBox);
+        comboBoxes.put("class",classComboBox);
         textFields.put("level",levelTextField);
         textFields.put("exp",expTextField);
         textFields.put("health",healthTextField);
@@ -57,14 +61,14 @@ public class NpcGUI extends JPanel {
         textFields.put("speed",speedTextField);
         textFields.put("initiative",initiativeTextField);
 
-        NpcController npcController = new NpcController(npcList,textFields);
+        NpcController npcController = new NpcController(npcList,textFields,raceComboBox,classComboBox);
 
         DefaultListModel model = (DefaultListModel) npcList.getModel();
 
         npcList.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
-                npcController.setTextFields((String) npcList.getSelectedValue());
+                npcController.setFields((String) npcList.getSelectedValue());
             }
         });
 

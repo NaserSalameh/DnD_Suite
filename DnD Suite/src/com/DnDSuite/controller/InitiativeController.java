@@ -20,7 +20,7 @@ public class InitiativeController {
         mockPlayers = new HashMap<String,Player>();
 
         int[] abilities = {10,10,10,10,10,10};
-        Player player1 = new Player("Zenithar","Tiefling","Aris");
+        Player player1 = new Player("Zenithar","Tiefling","Fighter","Aris");
         mockPlayers.put("Zenithar",player1);
 
         this.playerslList = playerslList;
