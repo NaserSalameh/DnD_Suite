@@ -9,27 +9,27 @@ import java.util.HashMap;
 
 public class PlayerController {
 
-        private JList creatureList;
-        protected DefaultListModel model;
-        protected HashMap<String,JTextField> textFields;
-        protected JComboBox raceComboBox;
-        protected JComboBox classComboBox;
-        protected JComboBox subClassComboBox;
+        private JList playerList;
+        private DefaultListModel model;
+        private HashMap<String,JTextField> textFields;
+        private JComboBox raceComboBox;
+        private JComboBox classComboBox;
+        private JComboBox subClassComboBox;
 
         private CampaignData data;
 
-        public PlayerController(CampaignData data, JList creatureList, HashMap<String, JTextField> textFields, JComboBox raceComboBox, JComboBox classComboBox, JComboBox subClassComboBox) {
+        public PlayerController(CampaignData data, JList playerList, HashMap<String, JTextField> textFields, JComboBox raceComboBox, JComboBox classComboBox, JComboBox subClassComboBox) {
 
             this.data = data;
 
-            this.creatureList = creatureList;
+            this.playerList = playerList;
             this.textFields = textFields;
             this.raceComboBox = raceComboBox;
             this.classComboBox = classComboBox;
             this.subClassComboBox = subClassComboBox;
 
             model = new DefaultListModel();
-            this.creatureList.setModel(model);
+            this.playerList.setModel(model);
 
 
             for(Player p: data.getPlayers()) {
@@ -43,23 +43,20 @@ public class PlayerController {
         private void initialiseComboBoxes(){
 
             for (int i = 0; i < data.getRaces().size(); i++)
-            {
                 raceComboBox.addItem(data.getRaces().get(i));
-            }
+
 
             for (int i = 0; i < data.getClasses().size(); i++)
-            {
                 classComboBox.addItem(data.getClasses().get(i));
-            }
+
 
         }
 
      public void initialiseSubClasses(String cl){
             subClassComboBox.removeAllItems();
             for (int i = 0; i < data.getSubClasses().get(cl).size(); i++)
-             {
                 subClassComboBox.addItem(data.getSubClasses().get(cl).get(i));
-             }
+
     }
 
         public void setFields(String playerName){
@@ -99,7 +96,7 @@ public class PlayerController {
         }
 
 
-    protected Player createPlayer() {
+    private Player createPlayer() {
         String name = textFields.get("name").getText(),
                 race = (String) raceComboBox.getSelectedItem(),
                 creatureClass = (String) classComboBox.getSelectedItem(),
@@ -125,7 +122,7 @@ public class PlayerController {
         return new Player(name,race,creatureClass,creatureSubClass,player,creatureStat);
     }
 
-    public void newCreature(String playerName){
+    public void newPlayer(){
         Player newPlayer = createPlayer();
 
         //will be changed to data file
@@ -133,7 +130,7 @@ public class PlayerController {
         model.add(model.getSize(),newPlayer);
     }
 
-    public void editCreature(String playerName,int index){
+    public void editPlayer(String playerName, int index){
 
         Player newPlayer = createPlayer();
             for(Player p: data.getPlayers())

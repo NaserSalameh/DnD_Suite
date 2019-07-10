@@ -86,7 +86,7 @@ public class PlayersGUI extends JPanel {
         newButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                playerController.newCreature(nameTextField.getText());
+                playerController.newPlayer();
                 model.add(model.getSize(), nameTextField.getText());
             }
         });
@@ -95,7 +95,7 @@ public class PlayersGUI extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                playerController.editCreature(nameTextField.getText(),playersList.getSelectedIndex());
+                playerController.editPlayer(nameTextField.getText(),playersList.getSelectedIndex());
             }
         });
     }

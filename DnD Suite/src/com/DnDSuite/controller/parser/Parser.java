@@ -14,9 +14,10 @@ public class Parser {
 
     CampaignData data;
 
-    protected PlayerParser playerParser;
     protected RaceParser raceParser;
     protected ClassParser classParser;
+    protected PlayerParser playerParser;
+    protected NpcParser npcParser;
 
     public Parser(CampaignData data) throws IOException {
 
@@ -25,6 +26,7 @@ public class Parser {
         classParser = new ClassParser();
         playerParser = new PlayerParser();
         raceParser = new RaceParser();
+        npcParser = new NpcParser();
         // Creating a Workbook from an Excel file (.xls or .xlsx)
         Workbook workbook = WorkbookFactory.create(new File(SAMPLE_XLSX_FILE_PATH));
 
@@ -38,6 +40,9 @@ public class Parser {
                 data.setClasses(classParser.parseClasses(sheet));
                 data.setSubClasses(classParser.parseSubClasses(sheet));
             }
+            //add a getLocation when ready
+            else if(sheet.getSheetName().equals("NPCs"))
+                data.setNpcs(npcParser.parse(sheet));
 
         }
 
