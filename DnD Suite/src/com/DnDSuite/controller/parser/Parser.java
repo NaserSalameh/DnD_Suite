@@ -28,8 +28,6 @@ public class Parser {
         // Creating a Workbook from an Excel file (.xls or .xlsx)
         Workbook workbook = WorkbookFactory.create(new File(SAMPLE_XLSX_FILE_PATH));
 
-        // Retrieving the number of sheets in the Workbook
-        System.out.println("Workbook has " + workbook.getNumberOfSheets() + " Sheets : ");
 
         for(Sheet sheet: workbook) {
             if(sheet.getSheetName().equals("Players"))

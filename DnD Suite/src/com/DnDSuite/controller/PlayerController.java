@@ -54,15 +54,12 @@ public class PlayerController {
 
         }
 
-     private void initialiseSubClasses(String cl){
-
-        for (int i = 0; i < data.getSubClasses().size(); i++)
-        {
-            String[] split = data.getSubClasses().get(i).split(" - ");
-            if(split[0].equals(cl))
-                subClassComboBox.addItem(split[1]);
-        }
-
+     public void initialiseSubClasses(String cl){
+            subClassComboBox.removeAllItems();
+            for (int i = 0; i < data.getSubClasses().get(cl).size(); i++)
+             {
+                subClassComboBox.addItem(data.getSubClasses().get(cl).get(i));
+             }
     }
 
         public void setFields(String playerName){
@@ -106,7 +103,9 @@ public class PlayerController {
         String name = textFields.get("name").getText(),
                 race = (String) raceComboBox.getSelectedItem(),
                 creatureClass = (String) classComboBox.getSelectedItem(),
+                creatureSubClass = (String) subClassComboBox.getSelectedItem(),
                 player = (String) textFields.get("player").getText();
+
 
         int level = Integer.parseInt(textFields.get("level").getText()),
                 exp = Integer.parseInt(textFields.get("exp").getText()),
@@ -123,7 +122,7 @@ public class PlayerController {
         int[] creatureAbilities = {strength, dexterity,constitution,intelligence,wisdom,charisma};
         Stat creatureStat = new Stat(level,exp,creatureAbilities,health,speed,initiative);
 
-        return new Player(name,race,creatureClass,player,creatureStat);
+        return new Player(name,race,creatureClass,creatureSubClass,player,creatureStat);
     }
 
     public void newCreature(String playerName){

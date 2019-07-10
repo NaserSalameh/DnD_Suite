@@ -76,6 +76,13 @@ public class PlayersGUI extends JPanel {
             }
         });
 
+        classComboBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                playerController.initialiseSubClasses(classComboBox.getSelectedItem().toString());
+            }
+        });
+
         newButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

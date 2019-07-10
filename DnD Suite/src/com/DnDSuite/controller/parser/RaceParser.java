@@ -21,6 +21,7 @@ public class RaceParser {
         for (Row row: sheet) {
             races.add(dataFormatter.formatCellValue(row.getCell(0)));
         }
+        System.out.println("Parsed Races...");
         return races;
     }
 

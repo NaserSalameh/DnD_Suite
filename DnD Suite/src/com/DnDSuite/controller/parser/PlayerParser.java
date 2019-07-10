@@ -31,13 +31,14 @@ public class PlayerParser {
 
             String[] rowCells = line.split(",");
             int[] abilities = {
-                    Integer.parseInt(rowCells[6]),Integer.parseInt(rowCells[7]),
-                    Integer.parseInt(rowCells[8]),Integer.parseInt(rowCells[9]),
-                    Integer.parseInt(rowCells[10]),Integer.parseInt(rowCells[11])};
-            Stat playerStat = new Stat(Integer.parseInt(rowCells[4]),Integer.parseInt(rowCells[5]),abilities,
-                    Integer.parseInt(rowCells[12]),Integer.parseInt(rowCells[13]),Integer.parseInt(rowCells[14]));
-            players.add(new Player(rowCells[0],rowCells[1],rowCells[2],rowCells[3],playerStat));
+                    Integer.parseInt(rowCells[7]),Integer.parseInt(rowCells[8]),
+                    Integer.parseInt(rowCells[9]),Integer.parseInt(rowCells[10]),
+                    Integer.parseInt(rowCells[11]),Integer.parseInt(rowCells[12])};
+            Stat playerStat = new Stat(Integer.parseInt(rowCells[5]),Integer.parseInt(rowCells[6]),abilities,
+                    Integer.parseInt(rowCells[13]),Integer.parseInt(rowCells[14]),Integer.parseInt(rowCells[15]));
+            players.add(new Player(rowCells[0],rowCells[1],rowCells[2],rowCells[3],rowCells[4],playerStat));
         }
+        System.out.println("Parsed Players...");
         return players;
     }
 

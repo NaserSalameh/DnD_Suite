@@ -6,6 +6,7 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class ClassParser {
 
@@ -25,15 +26,20 @@ public class ClassParser {
         return classes;
     }
 
-    public ArrayList<String> parseSubClasses(Sheet sheet) {
+    public HashMap<String, ArrayList<String>> parseSubClasses(Sheet sheet) {
 
-        ArrayList<String> subClasses = new ArrayList<>();
-
+        HashMap<String,ArrayList<String>> classSubClasses = new HashMap<>();
+        ArrayList<String> subClasses;
         for (Row row : sheet) {
+            subClasses = new ArrayList<>();
             for (Cell cell : row) {
-                subClasses.add(dataFormatter.formatCellValue(row.getCell(0))+" - " + dataFormatter.formatCellValue(cell));
+                subClasses.add(dataFormatter.formatCellValue(cell));
             }
+            String cl = subClasses.get(0);
+            subClasses.remove(0);
+            classSubClasses.put(cl, subClasses);
         }
-        return subClasses;
+        System.out.println("Parsed Classes...");
+        return classSubClasses;
     }
 }

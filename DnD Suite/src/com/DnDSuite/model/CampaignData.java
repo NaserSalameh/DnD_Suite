@@ -1,12 +1,13 @@
 package com.DnDSuite.model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class CampaignData {
 
     private ArrayList<String> races;
     private ArrayList<String> classes;
-    private ArrayList<String> subClasses;
+    private HashMap<String,ArrayList<String>> subClasses;
     private ArrayList<Player> players;
     private ArrayList<Npc> npcs;
     private ArrayList<Item> items;
@@ -14,7 +15,7 @@ public class CampaignData {
     public CampaignData(){
         races = new ArrayList<>();
         classes = new ArrayList<>();
-        subClasses = new ArrayList<>();
+        subClasses = new HashMap<>();
         players = new ArrayList<>();
         npcs = new ArrayList<>();
         items = new ArrayList<>();
@@ -28,9 +29,9 @@ public class CampaignData {
 
     public void setClasses(ArrayList<String> classes){this.classes = classes;}
 
-    public ArrayList<String> getSubClasses(){ return this.subClasses;}
+    public HashMap<String,ArrayList<String>> getSubClasses(){ return this.subClasses;}
 
-    public void setSubClasses(ArrayList<String> subClasses){this.subClasses = subClasses;}
+    public void setSubClasses(HashMap<String,ArrayList<String>> subClasses){this.subClasses = subClasses;}
 
     public ArrayList<Player> getPlayers(){ return this.players;}
 
