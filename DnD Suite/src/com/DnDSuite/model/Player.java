@@ -1,13 +1,29 @@
 package com.DnDSuite.model;
 
+import java.awt.*;
+import java.awt.image.BufferedImage;
+
 public class Player extends Entity {
 
     private String race;
+    private BufferedImage portrait;
     private String creatureClass;
     private String creatureSubClass;
     private String player;
     private Stat stat;
 
+
+    public Player(String name, String race, String creatureClass, String creatureSubClass,String player,Stat playerStat, BufferedImage portrait){
+
+        super(name);
+        this.race = race;
+        this.creatureClass=creatureClass;
+        this.creatureSubClass = creatureSubClass;
+        this.portrait = portrait;
+
+        this.stat=playerStat;
+        this.player = player;
+    }
 
     public Player(String name, String race, String creatureClass, String creatureSubClass,String player,Stat playerStat){
 
@@ -36,6 +52,10 @@ public class Player extends Entity {
     public String getRace() { return this.race; }
 
     public void setRace(String race){this.race = race;}
+
+    public Image getPortrait(){ return this.portrait;}
+
+    public void setPortrait(BufferedImage portrait){ this.portrait = portrait; }
 
     public String getCreatureClass(){return this.creatureClass;}
 

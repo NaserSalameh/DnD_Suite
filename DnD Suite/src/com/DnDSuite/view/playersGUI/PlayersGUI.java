@@ -14,7 +14,7 @@ public class PlayersGUI extends JPanel {
 
     private JList playersList;
     private JPanel playersPanel;
-    private JPanel playerPortrait;
+    private JLabel playerPortrait;
     private JPanel playerStats;
     private JPanel playerDetails;
     private JTextField nameTextField;
@@ -64,7 +64,7 @@ public class PlayersGUI extends JPanel {
         textFields.put("speed",speedTextField);
         textFields.put("initiative",initiativeTextField);
 
-        PlayerController playerController = new PlayerController(data,playersList,textFields,raceComboBox,classComboBox,subClassComboBox);
+        PlayerController playerController = new PlayerController(data,playersList,textFields,raceComboBox,classComboBox,subClassComboBox, playerPortrait);
 
         DefaultListModel model = (DefaultListModel) playersList.getModel();
 

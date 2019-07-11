@@ -16,9 +16,11 @@ public class PlayerController {
         private JComboBox classComboBox;
         private JComboBox subClassComboBox;
 
+        private JLabel playerPortrait;
+
         private CampaignData data;
 
-        public PlayerController(CampaignData data, JList playerList, HashMap<String, JTextField> textFields, JComboBox raceComboBox, JComboBox classComboBox, JComboBox subClassComboBox) {
+        public PlayerController(CampaignData data, JList playerList, HashMap<String, JTextField> textFields, JComboBox raceComboBox, JComboBox classComboBox, JComboBox subClassComboBox, JLabel playersPortrait) {
 
             this.data = data;
 
@@ -27,6 +29,8 @@ public class PlayerController {
             this.raceComboBox = raceComboBox;
             this.classComboBox = classComboBox;
             this.subClassComboBox = subClassComboBox;
+
+            this.playerPortrait = playersPortrait;
 
             model = new DefaultListModel();
             this.playerList.setModel(model);
@@ -93,6 +97,12 @@ public class PlayerController {
             textFields.get("charisma").setText(String.valueOf(selectedPlayer.getStat().getCharisma()));
             textFields.get("speed").setText(String.valueOf(selectedPlayer.getStat().getSpeed()));
             textFields.get("initiative").setText(String.valueOf(selectedPlayer.getStat().getInitiative()));
+
+            if(selectedPlayer.getPortrait()!=null) {
+                playerPortrait.setIcon(new ImageIcon(selectedPlayer.getPortrait()));
+            }
+            else
+                playerPortrait.setIcon(null);
         }
 
 

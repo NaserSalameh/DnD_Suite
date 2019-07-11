@@ -26,7 +26,7 @@ public class PlayerParser {
             Row row = sheet.getRow(i);
             String line="";
             for(Cell cell: row){
-                line+=dataFormatter.formatCellValue(cell)+",";
+                    line+=dataFormatter.formatCellValue(cell)+",";
             }
 
             String[] rowCells = line.split(",");

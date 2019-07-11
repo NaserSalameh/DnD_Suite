@@ -14,6 +14,8 @@ public class Parser {
 
     CampaignData data;
 
+    private ImageParser imageParser;
+
     protected RaceParser raceParser;
     protected ClassParser classParser;
     protected PlayerParser playerParser;
@@ -22,6 +24,8 @@ public class Parser {
     public Parser(CampaignData data) throws IOException {
 
         this.data = data;
+
+        imageParser = new ImageParser(data);
 
         classParser = new ClassParser();
         playerParser = new PlayerParser();
@@ -32,8 +36,10 @@ public class Parser {
 
 
         for(Sheet sheet: workbook) {
-            if(sheet.getSheetName().equals("Players"))
+            if(sheet.getSheetName().equals("Players")){
                 data.setPlayers(playerParser.parse(sheet));
+                imageParser.parsePlayersImages();
+            }
             else if(sheet.getSheetName().equals("Races"))
                 data.setRaces(raceParser.parse(sheet));
             else if(sheet.getSheetName().equals("Classes")) {
