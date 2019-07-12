@@ -2,6 +2,7 @@ package com.DnDSuite.controller;
 
 import com.DnDSuite.model.CampaignData;
 import com.DnDSuite.model.Npc;
+import com.DnDSuite.view.npcGUI.NpcGUI;
 
 import javax.swing.*;
 import java.util.HashMap;
@@ -14,18 +15,20 @@ public class NpcController {
     private JComboBox raceComboBox;
     private JComboBox locationComboBox;
     private JTextPane role;
+    private JLabel npcPortrait;
 
     private CampaignData data;
 
-    public NpcController(CampaignData data, JList npcsList, HashMap<String,JTextField> textFields, JComboBox raceComboBox, JComboBox locationComboBox, JTextPane role){
+    public NpcController(NpcGUI npcGUI, CampaignData data){
 
         this.data = data;
 
-        this.npcsList = npcsList;
-        this.textFields = textFields;
-        this.raceComboBox = raceComboBox;
-        this.locationComboBox = locationComboBox;
-        this.role = role;
+        this.npcsList = npcGUI.getNpcsList();
+        this.textFields = npcGUI.getTextfields();
+        this.raceComboBox = npcGUI.getRaceComboBox();
+        this.locationComboBox = npcGUI.getLocationComboBox();
+        this.role = npcGUI.getNpcRole();
+        this.npcPortrait = npcGUI.getNpcPortrait();
 
         model = new DefaultListModel();
         this.npcsList.setModel(model);
@@ -69,6 +72,13 @@ public class NpcController {
         textFields.get("description").setText(String.valueOf(selectedNpc.getDescription()));
         textFields.get("session").setText(String.valueOf(selectedNpc.getSession()));
         role.setText(selectedNpc.getRole());
+
+        if(selectedNpc.getPortrait()!=null) {
+            npcPortrait.setIcon(new ImageIcon(selectedNpc.getPortrait()));
+        }
+        else
+            npcPortrait.setIcon(null);
+
     }
 
     private Npc createNpc(){

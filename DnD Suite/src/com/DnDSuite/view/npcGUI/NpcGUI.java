@@ -14,7 +14,7 @@ public class NpcGUI extends JPanel{
     private JPanel rootPanel;
     private JList npcsList;
     private JPanel npcsPanel;
-    private JPanel npcPortrait;
+    private JLabel npcPortrait;
     private JButton newButton;
     private JButton editButton;
     private JPanel npcInfo;
@@ -27,6 +27,7 @@ public class NpcGUI extends JPanel{
     private JTextField ageTextfield;
     private JComboBox raceComboBox;
     private JComboBox locationComboBox;
+    private HashMap<String,JTextField> textFields;
 
     private CampaignData data;
 
@@ -36,14 +37,14 @@ public class NpcGUI extends JPanel{
 
         add(rootPanel);
 
-        HashMap<String,JTextField> textFields = new HashMap<String, JTextField>();
+        textFields = new HashMap<String, JTextField>();
 
         textFields.put("name",nameTextField);
         textFields.put("age", ageTextfield);
         textFields.put("description", descriptionTextField);
         textFields.put("session", sessionTextField);
 
-        NpcController npcController = new NpcController(data,npcsList,textFields,raceComboBox,locationComboBox,npcRole);
+        NpcController npcController = new NpcController(this, data);
 
         DefaultListModel model = (DefaultListModel) npcsList.getModel();
 
@@ -71,5 +72,17 @@ public class NpcGUI extends JPanel{
     }
 
     public JPanel getRootPanel(){ return rootPanel;}
+
+    public JList getNpcsList(){return this.npcsList;}
+
+    public JComboBox getRaceComboBox(){return this.raceComboBox;}
+
+    public JComboBox getLocationComboBox() {return this.locationComboBox;}
+
+    public HashMap<String, JTextField> getTextfields(){ return this.textFields;}
+
+    public JLabel getNpcPortrait() { return this.npcPortrait;}
+
+    public JTextPane getNpcRole() { return this.npcRole;}
 
 }

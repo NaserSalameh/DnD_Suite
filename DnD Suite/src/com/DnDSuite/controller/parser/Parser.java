@@ -47,8 +47,10 @@ public class Parser {
                 data.setSubClasses(classParser.parseSubClasses(sheet));
             }
             //add a getLocation when ready
-            else if(sheet.getSheetName().equals("NPCs"))
+            else if(sheet.getSheetName().equals("NPCs")) {
                 data.setNpcs(npcParser.parse(sheet));
+                imageParser.parseNpcImages();
+            }
 
         }
 

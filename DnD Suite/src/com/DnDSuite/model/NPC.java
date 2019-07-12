@@ -1,13 +1,31 @@
 package com.DnDSuite.model;
 
+import java.awt.*;
+import java.awt.image.BufferedImage;
+
 public class Npc extends Entity{
 
+    private BufferedImage portrait;
     private String session;
     private String description;
     private String race;
     private int age;
     private String role;
     private Location location;
+
+
+    public Npc(String name, String race, int age,  String description, String session, String role,BufferedImage portrait){
+        super(name);
+
+        this.session =session;
+        this.description = description;
+        this.race = race;
+        this.age = age;
+        this.role = role;
+        this.location = location;
+        this.portrait = portrait;
+
+    }
 
     public Npc(String name, String race, int age,  String description, String session, String role){
         super(name);
@@ -19,6 +37,10 @@ public class Npc extends Entity{
         this.role = role;
         this.location = location;
     }
+
+    public Image getPortrait(){ return this.portrait;}
+
+    public void setPortrait(BufferedImage portrait){ this.portrait = portrait; }
 
     public String getSession() {return this.session;}
 

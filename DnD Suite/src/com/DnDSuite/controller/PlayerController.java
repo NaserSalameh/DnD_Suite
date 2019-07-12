@@ -3,6 +3,7 @@ package com.DnDSuite.controller;
 import com.DnDSuite.model.CampaignData;
 import com.DnDSuite.model.Player;
 import com.DnDSuite.model.Stat;
+import com.DnDSuite.view.playersGUI.PlayersGUI;
 
 import javax.swing.*;
 import java.util.HashMap;
@@ -20,21 +21,20 @@ public class PlayerController {
 
         private CampaignData data;
 
-        public PlayerController(CampaignData data, JList playerList, HashMap<String, JTextField> textFields, JComboBox raceComboBox, JComboBox classComboBox, JComboBox subClassComboBox, JLabel playersPortrait) {
+        public PlayerController(PlayersGUI playersGUI, CampaignData data) {
 
             this.data = data;
 
-            this.playerList = playerList;
-            this.textFields = textFields;
-            this.raceComboBox = raceComboBox;
-            this.classComboBox = classComboBox;
-            this.subClassComboBox = subClassComboBox;
+            this.playerList = playersGUI.getPlayersList();
+            this.textFields = playersGUI.getTextfields();
+            this.raceComboBox = playersGUI.getRaceComboBox();
+            this.classComboBox = playersGUI.getClassComboBox();
+            this.subClassComboBox = playersGUI.getSubClassComboBox();
 
-            this.playerPortrait = playersPortrait;
+            this.playerPortrait = playersGUI.getPlayerPortrait();
 
             model = new DefaultListModel();
             this.playerList.setModel(model);
-
 
             for(Player p: data.getPlayers()) {
                 model.add(model.getSize(),p.getName());

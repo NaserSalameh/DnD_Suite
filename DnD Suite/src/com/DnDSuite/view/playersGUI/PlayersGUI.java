@@ -39,6 +39,7 @@ public class PlayersGUI extends JPanel {
     private JComboBox classComboBox;
     private JComboBox raceComboBox;
     private JComboBox subClassComboBox;
+    private HashMap<String,JTextField> textFields;
 
     private CampaignData data;
 
@@ -48,7 +49,7 @@ public class PlayersGUI extends JPanel {
 
         add(rootPanel);
 
-        HashMap<String,JTextField> textFields = new HashMap<String, JTextField>();
+        textFields = new HashMap<String, JTextField>();
 
         textFields.put("name",nameTextField);
         textFields.put("player",playerTextField);
@@ -64,7 +65,7 @@ public class PlayersGUI extends JPanel {
         textFields.put("speed",speedTextField);
         textFields.put("initiative",initiativeTextField);
 
-        PlayerController playerController = new PlayerController(data,playersList,textFields,raceComboBox,classComboBox,subClassComboBox, playerPortrait);
+        PlayerController playerController = new PlayerController(this,data);
 
         DefaultListModel model = (DefaultListModel) playersList.getModel();
 
@@ -101,4 +102,16 @@ public class PlayersGUI extends JPanel {
     }
 
     public JPanel getRootPanel(){ return rootPanel;}
+
+    public JList getPlayersList(){return this.playersList;}
+
+    public JComboBox getRaceComboBox(){return this.raceComboBox;}
+
+    public JComboBox getClassComboBox() {return this.classComboBox;}
+
+    public JComboBox getSubClassComboBox() {return this.subClassComboBox;}
+
+    public HashMap<String, JTextField> getTextfields(){ return this.textFields;}
+
+    public JLabel getPlayerPortrait() { return  this.playerPortrait;}
 }

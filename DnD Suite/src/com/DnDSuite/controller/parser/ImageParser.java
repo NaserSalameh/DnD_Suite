@@ -1,6 +1,7 @@
 package com.DnDSuite.controller.parser;
 
 import com.DnDSuite.model.CampaignData;
+import com.DnDSuite.model.Npc;
 import com.DnDSuite.model.Player;
 
 import javax.imageio.ImageIO;
@@ -65,6 +66,17 @@ public class ImageParser {
                 }
             }
         System.out.println("Parsed Player Portraits...");
+    }
+
+    public void parseNpcImages(){
+        HashMap<String,BufferedImage> playerImages = parse("NPCs");
+        for(Map.Entry entry : playerImages.entrySet())
+            for(Npc n: data.getNpcs()){
+                if(entry.getKey().equals(n.getName())) {
+                    n.setPortrait((BufferedImage) entry.getValue());
+                }
+            }
+        System.out.println("Parsed NPC Portraits...");
     }
 
 }
