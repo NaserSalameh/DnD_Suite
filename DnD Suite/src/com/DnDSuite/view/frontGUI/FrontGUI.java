@@ -3,7 +3,8 @@ package com.DnDSuite.view.frontGUI;
 import com.DnDSuite.model.Campaign;
 import com.DnDSuite.view.diceRollerGUI.DiceRollerGUI;
 import com.DnDSuite.view.initiativeGUI.InitiativeGUI;
-import com.DnDSuite.view.npcGUI.NpcGUI;
+import com.DnDSuite.view.locationsGUI.LocationsGUI;
+import com.DnDSuite.view.npcsGUI.NpcsGUI;
 import com.DnDSuite.view.playersGUI.PlayersGUI;
 
 import javax.swing.*;
@@ -17,7 +18,8 @@ public class FrontGUI extends JFrame {
     private DiceRollerGUI diceRollerGUI;
     private InitiativeGUI initiativeGUI;
     private PlayersGUI playersGUI;
-    private NpcGUI npcGUI;
+    private NpcsGUI npcGUI;
+    private LocationsGUI locationsGUI;
 
     public FrontGUI(Campaign campaign){
 
@@ -43,8 +45,11 @@ public class FrontGUI extends JFrame {
         playersGUI = new PlayersGUI(campaign.data);
         tabbedPane.add("Players", playersGUI.getRootPanel());
 
-        npcGUI = new NpcGUI(campaign.data);
-        tabbedPane.add("Npc", npcGUI.getRootPanel());
+        npcGUI = new NpcsGUI(campaign.data);
+        tabbedPane.add("NPCs", npcGUI.getRootPanel());
+
+        locationsGUI = new LocationsGUI(campaign.data);
+        tabbedPane.add("Locations", locationsGUI.getRootPanel());
 
     }
 

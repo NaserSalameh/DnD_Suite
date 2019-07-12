@@ -1,4 +1,4 @@
-package com.DnDSuite.view.npcGUI;
+package com.DnDSuite.view.npcsGUI;
 
 import com.DnDSuite.controller.NpcController;
 import com.DnDSuite.model.CampaignData;
@@ -10,7 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.HashMap;
 
-public class NpcGUI extends JPanel{
+public class NpcsGUI extends JPanel{
     private JPanel rootPanel;
     private JList npcsList;
     private JPanel npcsPanel;
@@ -31,7 +31,7 @@ public class NpcGUI extends JPanel{
 
     private CampaignData data;
 
-    public NpcGUI(CampaignData data){
+    public NpcsGUI(CampaignData data){
 
         this.data = data;
 

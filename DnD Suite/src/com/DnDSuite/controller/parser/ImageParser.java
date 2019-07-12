@@ -3,6 +3,7 @@ package com.DnDSuite.controller.parser;
 import com.DnDSuite.model.CampaignData;
 import com.DnDSuite.model.Npc;
 import com.DnDSuite.model.Player;
+import com.DnDSuite.model.Location;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -65,18 +66,31 @@ public class ImageParser {
                     p.setPortrait((BufferedImage) entry.getValue());
                 }
             }
-        System.out.println("Parsed Player Portraits...");
+        System.out.println("Parsed Player Images...");
     }
 
     public void parseNpcImages(){
-        HashMap<String,BufferedImage> playerImages = parse("NPCs");
-        for(Map.Entry entry : playerImages.entrySet())
+        HashMap<String,BufferedImage> npcImages = parse("NPCs");
+        for(Map.Entry entry : npcImages.entrySet())
             for(Npc n: data.getNpcs()){
                 if(entry.getKey().equals(n.getName())) {
                     n.setPortrait((BufferedImage) entry.getValue());
                 }
             }
-        System.out.println("Parsed NPC Portraits...");
+        System.out.println("Parsed NPC Images...");
+    }
+
+    public void parseLocationImages(){
+        HashMap<String,BufferedImage> locationPictures = parse("NPCs\\Pictures");
+        HashMap<String,BufferedImage> locationMaps = parse("NPCs\\Maps");
+        for(Map.Entry entry : locationPictures.entrySet())
+            for(Location l: data.getLocations()){
+                if(entry.getKey().equals(l.getName())) {
+                    l.setPicture((BufferedImage) entry.getValue());
+                    l.setPicture((BufferedImage) locationMaps.get(l.getName()));
+                }
+            }
+        System.out.println("Parsed Location Images...");
     }
 
 }

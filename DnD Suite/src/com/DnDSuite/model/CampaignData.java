@@ -10,6 +10,8 @@ public class CampaignData {
     private HashMap<String,ArrayList<String>> subClasses;
     private ArrayList<Player> players;
     private ArrayList<Npc> npcs;
+    private ArrayList<Location> locations;
+    private ArrayList<Quest> quests;
     private ArrayList<Item> items;
 
     public CampaignData(){
@@ -18,6 +20,8 @@ public class CampaignData {
         subClasses = new HashMap<>();
         players = new ArrayList<>();
         npcs = new ArrayList<>();
+        locations = new ArrayList<>();
+        quests = new ArrayList<>();
         items = new ArrayList<>();
     }
 
@@ -40,6 +44,14 @@ public class CampaignData {
     public ArrayList<Npc> getNpcs(){ return this.npcs;}
 
     public void setNpcs(ArrayList<Npc> npcs){this.npcs = npcs;}
+
+    public ArrayList<Location> getLocations(){ return this.locations;}
+
+    public void setLocations(ArrayList<Location> locations){this.locations = locations;}
+
+    public ArrayList<Quest> getQuests(){ return this.quests;}
+
+    public void setQuests(ArrayList<Quest> quests){this.quests = quests;}
 
     public ArrayList<Item> getItems(){ return this.items;}
 

@@ -2,7 +2,7 @@ package com.DnDSuite.controller;
 
 import com.DnDSuite.model.CampaignData;
 import com.DnDSuite.model.Npc;
-import com.DnDSuite.view.npcGUI.NpcGUI;
+import com.DnDSuite.view.npcsGUI.NpcsGUI;
 
 import javax.swing.*;
 import java.util.HashMap;
@@ -19,7 +19,7 @@ public class NpcController {
 
     private CampaignData data;
 
-    public NpcController(NpcGUI npcGUI, CampaignData data){
+    public NpcController(NpcsGUI npcGUI, CampaignData data){
 
         this.data = data;
 
