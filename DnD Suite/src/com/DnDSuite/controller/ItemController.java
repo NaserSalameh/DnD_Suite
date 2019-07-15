@@ -32,6 +32,7 @@ public class ItemController {
         this.itemPictue = itemsGUI.getItemPicture();
 
         model = new DefaultListModel();
+        itemsList.setModel(model);
 
         for(Item i: data.getItems())
             model.add(model.getSize(),i.getName());
@@ -50,7 +51,7 @@ public class ItemController {
         ownerComboBox.addItem("None");
 
         for (int i = 0; i < data.getPlayers().size(); i++)
-            ownerComboBox.addItem(data.getPlayers().get(i));
+            ownerComboBox.addItem(data.getPlayers().get(i).getName());
 
     }
 
@@ -63,7 +64,7 @@ public class ItemController {
 
         textFields.get("name").setText(selectedItem.getName());
         descriptionPane.setText(selectedItem.getDescription());
-        textFields.get("attribute").setText(String.valueOf(selectedItem.getAttributes()));
+        textFields.get("attributes").setText(String.valueOf(selectedItem.getAttributes()));
 
         for(int i = 0; i< rarityComboBox.getItemCount(); i++){
             if(rarityComboBox.getItemAt(i).equals(selectedItem.getRarity()))

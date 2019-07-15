@@ -3,6 +3,7 @@ package com.DnDSuite.view.frontGUI;
 import com.DnDSuite.model.Campaign;
 import com.DnDSuite.view.diceRollerGUI.DiceRollerGUI;
 import com.DnDSuite.view.initiativeGUI.InitiativeGUI;
+import com.DnDSuite.view.itemsGUI.ItemsGUI;
 import com.DnDSuite.view.locationsGUI.LocationsGUI;
 import com.DnDSuite.view.npcsGUI.NpcsGUI;
 import com.DnDSuite.view.playersGUI.PlayersGUI;
@@ -20,6 +21,7 @@ public class FrontGUI extends JFrame {
     private PlayersGUI playersGUI;
     private NpcsGUI npcGUI;
     private LocationsGUI locationsGUI;
+    private ItemsGUI itemsGUI;
 
     public FrontGUI(Campaign campaign){
 
@@ -50,6 +52,9 @@ public class FrontGUI extends JFrame {
 
         locationsGUI = new LocationsGUI(campaign.data);
         tabbedPane.add("Locations", locationsGUI.getRootPanel());
+
+        itemsGUI = new ItemsGUI(campaign.data);
+        tabbedPane.add("Items", itemsGUI.getRootPanel());
 
     }
 

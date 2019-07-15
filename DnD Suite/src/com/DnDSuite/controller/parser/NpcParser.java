@@ -1,6 +1,6 @@
 package com.DnDSuite.controller.parser;
 
-import com.DnDSuite.model.Npc;
+import com.DnDSuite.model.*;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
@@ -17,7 +17,7 @@ public class NpcParser {
             dataFormatter = new DataFormatter();
         }
 
-        public ArrayList<Npc> parse(Sheet sheet) {
+        public ArrayList<Npc> parse(Sheet sheet, CampaignData data) {
 
             ArrayList<Npc> npcs = new ArrayList<>();
 
@@ -30,7 +30,13 @@ public class NpcParser {
                 String[] rowCells = line.split(",");
 
                 Npc newNpc = new Npc(rowCells[0],rowCells[1],Integer.parseInt(rowCells[2]),rowCells[3],rowCells[4],rowCells[5]);
-                newNpc.setLocation(rowCells[6]);
+
+                Location temp= null;
+                for (Location l : data.getLocations())
+                    if(l.getName().equals(rowCells[6])) {
+                        temp = l;
+                       newNpc.setLocation(temp);
+                    }
 
                 npcs.add(newNpc);
             }

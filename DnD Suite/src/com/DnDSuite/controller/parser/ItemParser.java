@@ -34,8 +34,10 @@ public class ItemParser {
             if(!rowCells[4].equals("None")) {
                 Player temp= null;
                 for (Player p : data.getPlayers())
-                temp=p;
-                item = new Item(rowCells[0], rowCells[1],rowCells[2], rowCells[3], temp);
+                    if(p.getName().equals(rowCells[4])) {
+                        temp = p;
+                        item = new Item(rowCells[0], rowCells[1], rowCells[2], rowCells[3], temp);
+                    }
             }
             else
                 item = new Item(rowCells[0], rowCells[1],rowCells[2], rowCells[3]);
