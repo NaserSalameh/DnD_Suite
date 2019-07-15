@@ -2,6 +2,7 @@ package com.DnDSuite.controller;
 
 import com.DnDSuite.model.CampaignData;
 import com.DnDSuite.model.Npc;
+import com.DnDSuite.model.Location;
 import com.DnDSuite.view.npcsGUI.NpcsGUI;
 
 import javax.swing.*;
@@ -45,8 +46,8 @@ public class NpcController {
         for (int i = 0; i < data.getRaces().size(); i++)
             raceComboBox.addItem(data.getRaces().get(i));
 
-//        for (int i = 0; i < data.getLocations().size(); i++)
-//            locationComboBox.addItem(data.getRaces().get(i));
+        for (int i = 0; i < data.getLocations().size(); i++)
+            locationComboBox.addItem(data.getRaces().get(i));
     }
 
     public void setFields(String npcName){
@@ -92,7 +93,12 @@ public class NpcController {
         int age = Integer.parseInt(textFields.get("age").getText());
 
         Npc newNpc = new Npc(name,race,age,description,session,role);
-        newNpc.setLocation(location);
+
+        Location temp=null;
+        for (Location l : data.getLocations())
+            if (l.getName().equals(location))
+                temp = l;
+            newNpc.setLocation(temp);
 
         return newNpc;
     }

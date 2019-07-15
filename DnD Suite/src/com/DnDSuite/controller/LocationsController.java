@@ -16,6 +16,7 @@ public class LocationsController {
     private JList questsList;
     private JLabel locationPicture;
     private JLabel locationMap;
+    DefaultTreeModel treeModel;
 
     private CampaignData data;
 
@@ -29,13 +30,14 @@ public class LocationsController {
         this.locationPicture = locationsGUI.getLocationPicture();
         this.locationMap = locationsGUI.getLocationMap();
 
+         this.treeModel = (DefaultTreeModel) locationsTree.getModel();
+
         setLocationsTree();
         setFields(data.getLocations().get(0).getName());
     }
 
     private void setLocationsTree(){
-        DefaultTreeModel treeModel = (DefaultTreeModel) locationsTree.getModel();
-        DefaultMutableTreeNode world = new DefaultMutableTreeNode(data.getLocations().get(0).getName());
+       DefaultMutableTreeNode world = new DefaultMutableTreeNode(data.getLocations().get(0).getName());
         treeModel.setRoot(world);
 
         //better nesting needed
@@ -45,7 +47,6 @@ public class LocationsController {
                 treeModel.insertNodeInto(node, world, world.getChildCount());
   //          }
         }
-
     }
 
     public void setFields(String locationName){
@@ -78,6 +79,49 @@ public class LocationsController {
 //            model.add(model.getSize(),q.getName());
 //
 
+    }
+
+    private Location createLocation(){
+        String name = textFields.get("name").getText(),
+                equivalent = textFields.get("equivalent").getText(),
+                climate = textFields.get("climate").getText(),
+                features = textFields.get("features").getText();
+
+        Location newLocation = new Location(name,equivalent,climate,features);
+
+        return newLocation;
+    }
+
+    public void newLocation(DefaultMutableTreeNode within){
+        Location newLocation = createLocation();
+
+        for(Location l : data.getLocations())
+            if(l.getName().equals(within.getUserObject()))
+                newLocation.setWithin(l);
+
+        data.getLocations().add(newLocation);
+
+        DefaultMutableTreeNode node = new DefaultMutableTreeNode(newLocation.getName());
+        treeModel.insertNodeInto(node, within, within.getChildCount());
+    }
+
+    public void editLocation(String locationName,DefaultMutableTreeNode locationNode, DefaultMutableTreeNode within){
+
+        Location newLocation = createLocation();
+
+        for(Location l : data.getLocations())
+            if(l.getName().equals(locationName)) {
+                data.getLocations().remove(l);
+                treeModel.removeNodeFromParent(locationNode);
+            }
+
+        for(Location l : data.getLocations())
+            if(l.getName().equals(within.getUserObject()))
+                newLocation.setWithin(l);
+        data.getLocations().add(newLocation);
+
+        DefaultMutableTreeNode node = new DefaultMutableTreeNode(newLocation.getName());
+        treeModel.insertNodeInto(node, within, within.getChildCount());
 
     }
 

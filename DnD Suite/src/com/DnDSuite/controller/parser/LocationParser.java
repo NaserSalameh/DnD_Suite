@@ -39,7 +39,7 @@ public class LocationParser {
                 locations.add(location);
             }
         }
-        System.out.println("Parsed NPCs...");
+        System.out.println("Parsed Locations...");
         return locations;
     }
 }

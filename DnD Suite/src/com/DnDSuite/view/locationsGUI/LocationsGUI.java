@@ -48,6 +48,13 @@ public class LocationsGUI extends JPanel{
                 locationsController.setFields(selectedLocation);
             }
         });
+//
+//        addButton.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                locationsController.newLocation((DefaultMutableTreeNode) locationsTree.getLastSelectedPathComponent());
+//            }
+//        });
 
     }
 

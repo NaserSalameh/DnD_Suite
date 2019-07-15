@@ -1,9 +1,6 @@
 package com.DnDSuite.controller.parser;
 
-import com.DnDSuite.model.CampaignData;
-import com.DnDSuite.model.Npc;
-import com.DnDSuite.model.Player;
-import com.DnDSuite.model.Location;
+import com.DnDSuite.model.*;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -81,8 +78,8 @@ public class ImageParser {
     }
 
     public void parseLocationImages(){
-        HashMap<String,BufferedImage> locationPictures = parse("NPCs\\Pictures");
-        HashMap<String,BufferedImage> locationMaps = parse("NPCs\\Maps");
+        HashMap<String,BufferedImage> locationPictures = parse("Locations\\Pictures");
+        HashMap<String,BufferedImage> locationMaps = parse("Locations\\Maps");
         for(Map.Entry entry : locationPictures.entrySet())
             for(Location l: data.getLocations()){
                 if(entry.getKey().equals(l.getName())) {
@@ -91,6 +88,17 @@ public class ImageParser {
                 }
             }
         System.out.println("Parsed Location Images...");
+    }
+
+    public void parseItemImages(){
+        HashMap<String,BufferedImage> itemPictures = parse("Items");
+        for(Map.Entry entry : itemPictures.entrySet())
+            for(Item i: data.getItems()){
+                if(entry.getKey().equals(i.getName())) {
+                    i.setPicture((BufferedImage) entry.getValue());
+                }
+            }
+        System.out.println("Parsed Item Images...");
     }
 
 }

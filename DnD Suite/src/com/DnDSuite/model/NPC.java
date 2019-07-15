@@ -64,8 +64,5 @@ public class Npc extends Entity{
 
     public Location getLocation(){return this.location;}
 
-    //must find locations somehow?
-    public void setLocation(String location){
-
-    }
+    public void setLocation(Location location){ this.location = location;}
 }
