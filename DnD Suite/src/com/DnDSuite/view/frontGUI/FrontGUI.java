@@ -7,6 +7,7 @@ import com.DnDSuite.view.itemsGUI.ItemsGUI;
 import com.DnDSuite.view.locationsGUI.LocationsGUI;
 import com.DnDSuite.view.npcsGUI.NpcsGUI;
 import com.DnDSuite.view.playersGUI.PlayersGUI;
+import com.DnDSuite.view.questsGUI.QuestsGUI;
 
 import javax.swing.*;
 
@@ -22,6 +23,8 @@ public class FrontGUI extends JFrame {
     private NpcsGUI npcGUI;
     private LocationsGUI locationsGUI;
     private ItemsGUI itemsGUI;
+    private QuestsGUI questsGUI;
+
 
     public FrontGUI(Campaign campaign){
 
@@ -55,6 +58,10 @@ public class FrontGUI extends JFrame {
 
         itemsGUI = new ItemsGUI(campaign.data);
         tabbedPane.add("Items", itemsGUI.getRootPanel());
+
+        questsGUI = new QuestsGUI(campaign.data);
+        tabbedPane.add("Quests", questsGUI.getRootPanel());
+
 
     }
 

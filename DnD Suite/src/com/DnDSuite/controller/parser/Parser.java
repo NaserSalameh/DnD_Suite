@@ -16,12 +16,13 @@ public class Parser {
 
     private ImageParser imageParser;
 
-    protected RaceParser raceParser;
-    protected ClassParser classParser;
-    protected PlayerParser playerParser;
-    protected NpcParser npcParser;
-    protected LocationParser locationParser;
-    protected ItemParser itemParser;
+    private RaceParser raceParser;
+    private ClassParser classParser;
+    private PlayerParser playerParser;
+    private NpcParser npcParser;
+    private LocationParser locationParser;
+    private ItemParser itemParser;
+    private QuestParser questParser;
 
     public Parser(CampaignData data) throws IOException {
 
@@ -35,7 +36,7 @@ public class Parser {
         npcParser = new NpcParser();
         locationParser = new LocationParser();
         itemParser = new ItemParser();
-
+        questParser = new QuestParser();
         // Creating a Workbook from an Excel file (.xls or .xlsx)
         Workbook workbook = WorkbookFactory.create(new File(SAMPLE_XLSX_FILE_PATH));
 
@@ -67,9 +68,10 @@ public class Parser {
                 imageParser.parseItemImages();
             }
 
+            else if(sheet.getSheetName().equals("Quests")) {
+                data.setQuests(questParser.parse(sheet,data));
+            }
+
         }
-
-
-
     }
 }

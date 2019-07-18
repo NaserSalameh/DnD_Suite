@@ -26,10 +26,10 @@ public class PlayerParser {
             Row row = sheet.getRow(i);
             String line="";
             for(Cell cell: row){
-                    line+=dataFormatter.formatCellValue(cell)+",";
+                    line+=dataFormatter.formatCellValue(cell)+"===";
             }
 
-            String[] rowCells = line.split(",");
+            String[] rowCells = line.split("===");
             int[] abilities = {
                     Integer.parseInt(rowCells[7]),Integer.parseInt(rowCells[8]),
                     Integer.parseInt(rowCells[9]),Integer.parseInt(rowCells[10]),

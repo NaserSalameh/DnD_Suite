@@ -25,9 +25,9 @@ public class NpcParser {
                 Row row = sheet.getRow(i);
                 String line = "";
                 for (Cell cell : row) {
-                    line += dataFormatter.formatCellValue(cell) + ",";
+                    line += dataFormatter.formatCellValue(cell) + "===";
                 }
-                String[] rowCells = line.split(",");
+                String[] rowCells = line.split("===");
 
                 Npc newNpc = new Npc(rowCells[0],rowCells[1],Integer.parseInt(rowCells[2]),rowCells[3],rowCells[4],rowCells[5]);
 

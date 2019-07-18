@@ -26,9 +26,9 @@ public class ItemParser {
             Row row = sheet.getRow(i);
             String line = "";
             for (Cell cell : row) {
-                line += dataFormatter.formatCellValue(cell) + ",";
+                line += dataFormatter.formatCellValue(cell) + "===";
             }
-            String[] rowCells = line.split(",");
+            String[] rowCells = line.split("===");
             Item item = null;
 
             if(!rowCells[4].equals("None")) {
