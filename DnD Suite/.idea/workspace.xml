@@ -53,18 +53,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/controller/ItemController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/model/Campaign.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="247">
@@ -76,7 +64,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/view/frontGUI/FrontGUI.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="433">
@@ -84,6 +72,39 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/controller/DiceRollerController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="23" column="49" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/view/diceRollerGUI/RollButtonListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="169">
+              <caret line="61" column="68" selection-start-line="61" selection-start-column="68" selection-end-line="61" selection-end-column="68" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/libs/random.org-simpleclient-master/random.org-simpleclient-master/random.org-client.jar!/com/marsG/simplerandomorglib/RandomIntegerClient.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -105,30 +126,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
               <caret line="9" selection-start-line="9" selection-end-line="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/controller/parser/RaceParser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/controller/parser/NpcParser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="29" column="51" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -166,7 +163,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/DnDSuite/controller/PlayersController.java" />
         <option value="$PROJECT_DIR$/src/com/DnDSuite/model/NpcGUI/NpcGUI.java" />
         <option value="$PROJECT_DIR$/src/com/DnDSuite/view/NpcGUI/NpcGUI.java" />
         <option value="$PROJECT_DIR$/src/com/DnDSuite/controller/CreatureController.java" />
@@ -217,6 +213,7 @@
         <option value="$PROJECT_DIR$/src/com/DnDSuite/controller/FrontController.java" />
         <option value="$PROJECT_DIR$/src/com/DnDSuite/controller/Main.java" />
         <option value="$PROJECT_DIR$/src/com/DnDSuite/view/frontGUI/FrontGUI.java" />
+        <option value="$PROJECT_DIR$/src/com/DnDSuite/controller/DiceRollerController.java" />
       </list>
     </option>
   </component>
@@ -249,6 +246,19 @@
               <item name="DnD Suite" type="b2602c69:ProjectViewProjectNode" />
               <item name="DnD Suite" type="462c0819:PsiDirectoryNode" />
               <item name="libs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DnD Suite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DnD Suite" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+              <item name="random.org-simpleclient-master" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DnD Suite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DnD Suite" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+              <item name="random.org-simpleclient-master" type="462c0819:PsiDirectoryNode" />
+              <item name="random.org-simpleclient-master" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DnD Suite" type="b2602c69:ProjectViewProjectNode" />
@@ -412,12 +422,12 @@
       <workItem from="1562699727492" duration="10726000" />
       <workItem from="1562835900756" duration="21715000" />
       <workItem from="1563198145699" duration="8725000" />
-      <workItem from="1565101434379" duration="1429000" />
+      <workItem from="1565101434379" duration="2047000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127028000" />
+    <option name="totallyTimeSpent" value="127646000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -493,7 +503,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/model/Class.java" />
     <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/model/Entity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -511,23 +520,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/view/diceRollerGUI/RollButtonListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="57" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/controller/DiceRollerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="21" column="68" selection-start-line="21" selection-start-column="68" selection-end-line="21" selection-end-column="68" />
         </state>
       </provider>
     </entry>
@@ -869,6 +861,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="433">
           <caret line="34" column="13" lean-forward="true" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/random.org-simpleclient-master/random.org-simpleclient-master/random.org-client.jar!/com/marsG/simplerandomorglib/RandomIntegerClient.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/view/diceRollerGUI/RollButtonListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="61" column="68" selection-start-line="61" selection-start-column="68" selection-end-line="61" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/controller/DiceRollerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="23" column="49" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
