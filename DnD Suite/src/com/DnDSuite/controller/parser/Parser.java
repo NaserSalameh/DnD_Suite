@@ -3,14 +3,10 @@ package com.DnDSuite.controller.parser;
 import com.DnDSuite.model.CampaignData;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
 
-import java.io.File;
 import java.io.IOException;
 
 public class Parser {
-
-    public static final String SAMPLE_XLSX_FILE_PATH = "sample.xlsx";
 
     CampaignData data;
 
@@ -24,7 +20,7 @@ public class Parser {
     private ItemParser itemParser;
     private QuestParser questParser;
 
-    public Parser(CampaignData data) throws IOException {
+    public Parser(Workbook workbook, CampaignData data) throws IOException {
 
         this.data = data;
 
@@ -38,7 +34,6 @@ public class Parser {
         itemParser = new ItemParser();
         questParser = new QuestParser();
         // Creating a Workbook from an Excel file (.xls or .xlsx)
-        Workbook workbook = WorkbookFactory.create(new File(SAMPLE_XLSX_FILE_PATH));
 
 
         for(Sheet sheet: workbook) {

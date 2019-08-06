@@ -1,12 +1,12 @@
 package com.DnDSuite.controller;
 
-import com.DnDSuite.model.Campaign;
+import com.DnDSuite.view.frontGUI.FrontGUI;
 
 public class Main {
 
     public static void main(String[] args){
 
-        Campaign campaign = new Campaign();
+        FrontGUI frontGUI = new FrontGUI();
 
     }
 
