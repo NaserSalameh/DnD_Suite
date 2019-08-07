@@ -13,7 +13,7 @@ import java.util.Map;
 public class ImageParser {
 
     // File representing the folder that you select using a FileChooser
-    static final File dir = new File("pictures");
+    private File dir = new File("pictures");
 
     // array of supported extensions (use a List if you prefer)
     static final String[] EXTENSIONS = new String[]{
@@ -34,8 +34,11 @@ public class ImageParser {
 
     private CampaignData data;
 
-    public ImageParser(CampaignData data){
+    public ImageParser(CampaignData data){ this.data = data; }
+
+    public ImageParser(CampaignData data, String location){
         this.data = data;
+        dir = new File(location);
     }
 
     public HashMap<String, BufferedImage> parse(String folderName) {

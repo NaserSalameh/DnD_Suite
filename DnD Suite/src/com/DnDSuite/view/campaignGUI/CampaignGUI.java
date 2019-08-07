@@ -4,6 +4,7 @@ import com.DnDSuite.model.Campaign;
 import com.DnDSuite.view.diceRollerGUI.DiceRollerGUI;
 import com.DnDSuite.view.initiativeGUI.InitiativeGUI;
 import com.DnDSuite.view.itemsGUI.ItemsGUI;
+import com.DnDSuite.view.loaderGUI.LoaderGUI;
 import com.DnDSuite.view.locationsGUI.LocationsGUI;
 import com.DnDSuite.view.npcsGUI.NpcsGUI;
 import com.DnDSuite.view.playersGUI.PlayersGUI;
@@ -24,7 +25,7 @@ public class CampaignGUI extends JFrame {
     private LocationsGUI locationsGUI;
     private ItemsGUI itemsGUI;
     private QuestsGUI questsGUI;
-
+    private LoaderGUI loaderGUI;
 
     public CampaignGUI(Campaign campaign){
 
@@ -62,6 +63,8 @@ public class CampaignGUI extends JFrame {
         questsGUI = new QuestsGUI(campaign.data);
         tabbedPane.add("Quests", questsGUI.getRootPanel());
 
+        loaderGUI = new LoaderGUI(campaign.data,this);
+        tabbedPane.add("Loader", loaderGUI.getRootPanel());
 
     }
 
