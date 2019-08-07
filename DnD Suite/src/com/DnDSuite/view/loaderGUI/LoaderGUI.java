@@ -12,15 +12,11 @@ import java.awt.event.ActionListener;
 public class LoaderGUI extends JPanel {
 
     private JPanel rootPanel;
-    private JTextField loadCampaignLocation;
-    private JTextField loadPicturesLocation;
     private JButton loadCampaignButton;
     private JButton loadPicturesButton;
     private JButton saveCampaignButton;
-    private JTextField savePicturesLocation;
     private JButton savePicturesButton;
     private JTextArea notificationArea;
-    private JTextField saveCampaignLocation;
 
     public LoaderGUI(CampaignData data, JFrame parentGUI){
 
@@ -40,16 +36,13 @@ public class LoaderGUI extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ImageParser imageParser = new ImageParser(data, loaderController.selectFolder());
-                imageParser.parsePlayersImages();
-                imageParser.parseNpcImages();
-                imageParser.parseItemImages();
-                imageParser.parseLocationImages();
+                notificationArea.setText(notificationArea.getText() + imageParser.parsePlayersImages() + "\n");
+                notificationArea.setText(notificationArea.getText() + imageParser.parseNpcImages() + "\n");
+                notificationArea.setText(notificationArea.getText() + imageParser.parseLocationImages() + "\n");
+                notificationArea.setText(notificationArea.getText() + imageParser.parseItemImages() + "\n");
             }
         });
-
-
     }
 
     public JPanel getRootPanel(){return this.rootPanel;}
-
 }

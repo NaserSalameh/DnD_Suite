@@ -11,12 +11,13 @@ import java.io.IOException;
 public class Campaign {
 
     public CampaignData data;
-    //public static final String SAMPLE_XLSX_FILE_PATH = "sample.xlsx";
+    private File dataFile;
     private Workbook workbook;
 
-    public Campaign(File dataFile){
+    public Campaign(File dataFile) {
 
-        data = new CampaignData();
+        this.data = new CampaignData();
+        this.dataFile = dataFile;
 
         try {
             workbook = WorkbookFactory.create(dataFile);
@@ -25,8 +26,9 @@ public class Campaign {
             e.printStackTrace();
         }
 
-        CampaignGUI front= new CampaignGUI(this);
-        front.setVisible(true);
+        CampaignGUI campaignGUI= new CampaignGUI(this);
+        campaignGUI.setVisible(true);
     }
 
 }
+

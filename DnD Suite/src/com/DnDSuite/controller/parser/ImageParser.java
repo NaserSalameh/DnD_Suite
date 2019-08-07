@@ -58,7 +58,7 @@ public class ImageParser {
         return images;
     }
 
-    public void parsePlayersImages(){
+    public String parsePlayersImages(){
         HashMap<String,BufferedImage> playerImages = parse("Players");
         for(Map.Entry entry : playerImages.entrySet())
             for(Player p: data.getPlayers()){
@@ -66,10 +66,10 @@ public class ImageParser {
                     p.setPortrait((BufferedImage) entry.getValue());
                 }
             }
-        System.out.println("Parsed Player Images...");
+        return("Parsed Player Images...");
     }
 
-    public void parseNpcImages(){
+    public String parseNpcImages(){
         HashMap<String,BufferedImage> npcImages = parse("NPCs");
         for(Map.Entry entry : npcImages.entrySet())
             for(Npc n: data.getNpcs()){
@@ -77,10 +77,10 @@ public class ImageParser {
                     n.setPortrait((BufferedImage) entry.getValue());
                 }
             }
-        System.out.println("Parsed NPC Images...");
+        return("Parsed NPC Images...");
     }
 
-    public void parseLocationImages(){
+    public String parseLocationImages(){
         HashMap<String,BufferedImage> locationPictures = parse("Locations\\Pictures");
         HashMap<String,BufferedImage> locationMaps = parse("Locations\\Maps");
         for(Map.Entry entry : locationPictures.entrySet())
@@ -90,10 +90,10 @@ public class ImageParser {
                     l.setPicture((BufferedImage) locationMaps.get(l.getName()));
                 }
             }
-        System.out.println("Parsed Location Images...");
+        return("Parsed Location Images...");
     }
 
-    public void parseItemImages(){
+    public String parseItemImages(){
         HashMap<String,BufferedImage> itemPictures = parse("Items");
         for(Map.Entry entry : itemPictures.entrySet())
             for(Item i: data.getItems()){
@@ -101,7 +101,7 @@ public class ImageParser {
                     i.setPicture((BufferedImage) entry.getValue());
                 }
             }
-        System.out.println("Parsed Item Images...");
+        return("Parsed Item Images...");
     }
 
 }

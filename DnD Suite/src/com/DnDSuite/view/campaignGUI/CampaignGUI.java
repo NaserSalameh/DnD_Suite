@@ -18,6 +18,7 @@ public class CampaignGUI extends JFrame {
 
     private JPanel rootPanel;
     private JTabbedPane tabbedPane;
+    private LoaderGUI loaderGUI;
     private DiceRollerGUI diceRollerGUI;
     private InitiativeGUI initiativeGUI;
     private PlayersGUI playersGUI;
@@ -25,7 +26,7 @@ public class CampaignGUI extends JFrame {
     private LocationsGUI locationsGUI;
     private ItemsGUI itemsGUI;
     private QuestsGUI questsGUI;
-    private LoaderGUI loaderGUI;
+
 
     public CampaignGUI(Campaign campaign){
 
@@ -41,6 +42,9 @@ public class CampaignGUI extends JFrame {
        // rootPanel.add(tabbedPane);
         add(tabbedPane);
         tabbedPane.setTabPlacement(JTabbedPane.LEFT);
+
+        loaderGUI = new LoaderGUI(campaign.data,this);
+        tabbedPane.add("Loader", loaderGUI.getRootPanel());
 
         diceRollerGUI = new DiceRollerGUI();
         tabbedPane.add("Dice Roller", diceRollerGUI.getRootPanel());
@@ -62,9 +66,6 @@ public class CampaignGUI extends JFrame {
 
         questsGUI = new QuestsGUI(campaign.data);
         tabbedPane.add("Quests", questsGUI.getRootPanel());
-
-        loaderGUI = new LoaderGUI(campaign.data,this);
-        tabbedPane.add("Loader", loaderGUI.getRootPanel());
 
     }
 
