@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
 public class FrontGUI extends JFrame{
 
@@ -35,7 +36,8 @@ public class FrontGUI extends JFrame{
         selectFile.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Campaign campaign = new Campaign(loaderController.selectFile());
+                File campaignFile = loaderController.selectFile();
+                Campaign campaign = new Campaign(campaignFile.getName(),campaignFile);
                 dispose();
             }
         });

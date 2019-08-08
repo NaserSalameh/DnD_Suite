@@ -22,8 +22,11 @@ public class loaderController {
 
         folderChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         folderChooser.setAcceptAllFileFilterUsed(false);
-        if (folderChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION)
-            return folderChooser.getCurrentDirectory().getPath();
+        if (folderChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+            File selectedDirectory= folderChooser.getCurrentDirectory();
+            File selectedFolder = folderChooser.getSelectedFile();
+            return selectedDirectory.getPath()+"\\"+selectedFolder.getName();
+        }
         else{
             System.out.println("No Selection.");
             return null;

@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 public class CampaignData {
 
+    private String camapignName;
     private ArrayList<String> races;
     private ArrayList<String> classes;
     private HashMap<String,ArrayList<String>> subClasses;
@@ -14,7 +15,10 @@ public class CampaignData {
     private ArrayList<Quest> quests;
     private ArrayList<Item> items;
 
-    public CampaignData(){
+    public CampaignData(String campaignName){
+
+        this.camapignName = campaignName;
+
         races = new ArrayList<>();
         classes = new ArrayList<>();
         subClasses = new HashMap<>();
@@ -23,6 +27,10 @@ public class CampaignData {
         locations = new ArrayList<>();
         quests = new ArrayList<>();
         items = new ArrayList<>();
+    }
+
+    public String getCamapignName() {
+        return camapignName;
     }
 
     public ArrayList<String> getRaces(){ return this.races;}

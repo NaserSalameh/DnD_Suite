@@ -2,12 +2,14 @@ package com.DnDSuite.view.loaderGUI;
 
 import com.DnDSuite.controller.loaderController;
 import com.DnDSuite.controller.parser.ImageParser;
+import com.DnDSuite.controller.writer.Writer;
 import com.DnDSuite.model.Campaign;
 import com.DnDSuite.model.CampaignData;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
 public class LoaderGUI extends JPanel {
 
@@ -15,7 +17,6 @@ public class LoaderGUI extends JPanel {
     private JButton loadCampaignButton;
     private JButton loadPicturesButton;
     private JButton saveCampaignButton;
-    private JButton savePicturesButton;
     private JTextArea notificationArea;
 
     public LoaderGUI(CampaignData data, JFrame parentGUI){
@@ -27,7 +28,8 @@ public class LoaderGUI extends JPanel {
         loadCampaignButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Campaign campaign = new Campaign(loaderController.selectFile());
+                File campaignFile = loaderController.selectFile();
+                Campaign campaign = new Campaign(campaignFile.getName(),campaignFile);
                 parentGUI.dispose();
             }
         });
@@ -35,13 +37,27 @@ public class LoaderGUI extends JPanel {
         loadPicturesButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ImageParser imageParser = new ImageParser(data, loaderController.selectFolder());
+                String loadLocation = loaderController.selectFolder();
+                ImageParser imageParser = new ImageParser(data, loadLocation);
+                notificationArea.setText("Loading Pictures From" + loadLocation + "\n");
                 notificationArea.setText(notificationArea.getText() + imageParser.parsePlayersImages() + "\n");
                 notificationArea.setText(notificationArea.getText() + imageParser.parseNpcImages() + "\n");
                 notificationArea.setText(notificationArea.getText() + imageParser.parseLocationImages() + "\n");
                 notificationArea.setText(notificationArea.getText() + imageParser.parseItemImages() + "\n");
+                notificationArea.setText(notificationArea.getText() + "Picture Load Complete!"+ "\n");
             }
         });
+
+        saveCampaignButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Writer writer = new Writer(data);
+                String saveLocation= loaderController.selectFolder();
+                notificationArea.setText("Saving Data to " + saveLocation +" \n");
+                notificationArea.setText(notificationArea.getText()+ writer.writeToFile(saveLocation) + "\n");
+            }
+        });
+
     }
 
     public JPanel getRootPanel(){return this.rootPanel;}

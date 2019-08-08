@@ -47,7 +47,7 @@ public class NpcController {
             raceComboBox.addItem(data.getRaces().get(i));
 
         for (int i = 0; i < data.getLocations().size(); i++)
-            locationComboBox.addItem(data.getRaces().get(i));
+            locationComboBox.addItem(data.getLocations().get(i).getName());
     }
 
     public void setFields(String npcName){

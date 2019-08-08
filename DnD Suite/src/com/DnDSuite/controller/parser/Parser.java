@@ -12,9 +12,9 @@ public class Parser {
 
     private ImageParser imageParser;
 
+    private PlayerParser playerParser;
     private RaceParser raceParser;
     private ClassParser classParser;
-    private PlayerParser playerParser;
     private NpcParser npcParser;
     private LocationParser locationParser;
     private ItemParser itemParser;
@@ -24,22 +24,20 @@ public class Parser {
 
         this.data = data;
 
-        imageParser = new ImageParser(data);
+        //imageParser = new ImageParser(data);
 
-        classParser = new ClassParser();
         playerParser = new PlayerParser();
+        classParser = new ClassParser();
         raceParser = new RaceParser();
         npcParser = new NpcParser();
         locationParser = new LocationParser();
         itemParser = new ItemParser();
         questParser = new QuestParser();
-        // Creating a Workbook from an Excel file (.xls or .xlsx)
-
 
         for(Sheet sheet: workbook) {
             if(sheet.getSheetName().equals("Players")){
                 data.setPlayers(playerParser.parse(sheet));
-                imageParser.parsePlayersImages();
+                //imageParser.parsePlayersImages();
             }
             else if(sheet.getSheetName().equals("Races"))
                 data.setRaces(raceParser.parse(sheet));
@@ -50,17 +48,17 @@ public class Parser {
             //add a getLocation when ready
             else if(sheet.getSheetName().equals("NPCs")) {
                 data.setNpcs(npcParser.parse(sheet, data));
-                imageParser.parseNpcImages();
+                //imageParser.parseNpcImages();
             }
 
             else if(sheet.getSheetName().equals("Locations")) {
                 data.setLocations(locationParser.parse(sheet));
-                imageParser.parseLocationImages();
+                //imageParser.parseLocationImages();
             }
 
             else if(sheet.getSheetName().equals("Items")) {
                 data.setItems(itemParser.parse(sheet,data));
-                imageParser.parseItemImages();
+                //imageParser.parseItemImages();
             }
 
             else if(sheet.getSheetName().equals("Quests")) {

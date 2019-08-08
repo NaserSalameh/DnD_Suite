@@ -34,7 +34,7 @@ public class ImageParser {
 
     private CampaignData data;
 
-    public ImageParser(CampaignData data){ this.data = data; }
+    //public ImageParser(CampaignData data){ this.data = data; }
 
     public ImageParser(CampaignData data, String location){
         this.data = data;

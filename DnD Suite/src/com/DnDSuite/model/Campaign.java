@@ -10,13 +10,17 @@ import java.io.IOException;
 
 public class Campaign {
 
+    private String campaignName;
+
     public CampaignData data;
     private File dataFile;
     private Workbook workbook;
 
-    public Campaign(File dataFile) {
+    public Campaign(String campaignName,File dataFile) {
 
-        this.data = new CampaignData();
+        this.campaignName = campaignName;
+
+        this.data = new CampaignData(campaignName);
         this.dataFile = dataFile;
 
         try {
@@ -30,5 +34,8 @@ public class Campaign {
         campaignGUI.setVisible(true);
     }
 
+    public String getCampaignName() {
+        return campaignName;
+    }
 }
 

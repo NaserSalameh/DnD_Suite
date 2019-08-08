@@ -14,7 +14,6 @@ public class PlayerParser {
     private DataFormatter dataFormatter;
 
     public PlayerParser(){
-
         dataFormatter = new DataFormatter();
     }
 
