@@ -31,18 +31,30 @@ public class NpcParser {
 
                 Npc newNpc = new Npc(rowCells[0],rowCells[1],Integer.parseInt(rowCells[2]),rowCells[3],rowCells[4],rowCells[5]);
 
-                Location temp= null;
-                for (Location l : data.getLocations())
-                    if(l.getName().equals(rowCells[6])) {
-                        temp = l;
-                       newNpc.setLocation(temp);
-                    }
-
                 npcs.add(newNpc);
             }
 
             System.out.println("Parsed NPCs...");
             return npcs;
+        }
+
+        public void parseConnections(Sheet sheet, CampaignData data){
+
+            for (int i = 1; i < sheet.getPhysicalNumberOfRows(); i++) {
+                Row row = sheet.getRow(i);
+                Npc tempNpc = null;
+                for(Npc n: data.getNpcs())
+                    if(n.getName().equals(String.valueOf(row.getCell(0))))
+                        tempNpc = n;
+
+                Location tempLocation= null;
+                for (Location l : data.getLocations())
+                    if (l.getName().equals(String.valueOf(row.getCell(6))))
+                        tempLocation = l;
+
+                tempNpc.setLocation(tempLocation);
+            }
+            System.out.println("Parsed NPC-Locations...");
         }
 
 }

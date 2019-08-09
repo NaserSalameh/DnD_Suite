@@ -56,9 +56,11 @@ public class QuestController {
 
          questsName.setText(selectedQuest.getName());
 
+         npcsModel.removeAllElements();
          for(Npc n: selectedQuest.getNpcs())
              npcsModel.add(npcsModel.getSize(),n.getName());
 
+         locationsModel.removeAllElements();
          for(Location l: selectedQuest.getLocations())
             locationsModel.add(locationsModel.getSize(),l.getName());
 

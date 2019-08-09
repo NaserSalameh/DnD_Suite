@@ -45,7 +45,6 @@ public class Parser {
                 data.setClasses(classParser.parseClasses(sheet));
                 data.setSubClasses(classParser.parseSubClasses(sheet));
             }
-            //add a getLocation when ready
             else if(sheet.getSheetName().equals("NPCs")) {
                 data.setNpcs(npcParser.parse(sheet, data));
                 //imageParser.parseNpcImages();
@@ -64,7 +63,28 @@ public class Parser {
             else if(sheet.getSheetName().equals("Quests")) {
                 data.setQuests(questParser.parse(sheet,data));
             }
-
         }
+        parseConnections(workbook);
+    }
+
+    private void parseConnections(Workbook workbook){
+        for(Sheet sheet: workbook){
+             if(sheet.getSheetName().equals("NPCs")) {
+                 npcParser.parseConnections(sheet,data);
+            }
+
+            else if(sheet.getSheetName().equals("Locations")) {
+                locationParser.parseConnections(sheet,data);
+            }
+
+            else if(sheet.getSheetName().equals("Items")) {
+                 itemParser.parseConnections(sheet,data);
+            }
+
+            else if(sheet.getSheetName().equals("Quests")) {
+                 questParser.parseConnections(sheet,data);
+            }
+        }
+        System.out.println("Parsed All Connections...");
     }
 }

@@ -36,27 +36,45 @@ public class QuestParser {
 
             Quest quest = new Quest(rowCells[0], rowCells[3]);
 
-            String[] locations = rowCells[1].split("\\) ");
-            for (int j = 1; j < locations.length; j++) {
-                locations[j]=locations[j].substring(0,locations[j].length()-1);
-                for (Location l : data.getLocations())
-                    if(l.getName().equals(locations[j]))
-                        quest.getLocations().add(l);
-            }
 
 
-            if(!rowCells[2].equals("None")) {
-                String[] npcs = rowCells[2].split("\\) ");
-                for (int j = 1; j < npcs.length; j++) {
-                    npcs[j] = npcs[j].substring(0, npcs[j].length() - 1);
-                    for (Npc n : data.getNpcs())
-                        if (n.getName().equals(npcs[j]))
-                            quest.getNpcs().add(n);
-                }
-            }
             quests.add(quest);
         }
         System.out.println("Parsed Quests...");
         return quests;
     }
+
+    public void parseConnections(Sheet sheet, CampaignData data){
+
+        for (int i = 1; i < sheet.getPhysicalNumberOfRows(); i++) {
+            Row row = sheet.getRow(i);
+            Quest tempQuest = null;
+            for(Quest q: data.getQuests())
+                if(q.getName().equals(String.valueOf(row.getCell(0))))
+                    tempQuest = q;
+
+            String[] locations = String.valueOf(row.getCell(1)).split("\\) ");
+            for (int j = 1; j < locations.length; j++) {
+                locations[j]=locations[j].trim();
+                for (Location l : data.getLocations())
+                    if(l.getName().equals(locations[j]))
+                        tempQuest.getLocations().add(l);
+            }
+
+            if(!row.getCell(2).equals("None")) {
+                String[] npcs = String.valueOf(row.getCell(2)).split("\\) ");
+                for (int j = 1; j < npcs.length; j++) {
+                    npcs[j] = npcs[j].trim();
+                    for (Npc n : data.getNpcs())
+                        if (n.getName().equals(npcs[j]))
+                            tempQuest.getNpcs().add(n);
+                }
+            }
+
+        }
+        System.out.println("Parsed Quest-Locations...");
+        System.out.println("Parsed Quest-NPCs...");
+    }
+
+
 }

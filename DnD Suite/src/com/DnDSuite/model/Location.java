@@ -22,6 +22,7 @@ public class Location {
         this.equivalent = equivalent;
         this.climate = climate;
         this.features = features;
+        quests = new ArrayList<>();
 
     }
 
@@ -31,6 +32,7 @@ public class Location {
         this.equivalent = equivalent;
         this.climate = climate;
         this.features = features;
+        quests = new ArrayList<>();
 
     }
 
@@ -42,6 +44,7 @@ public class Location {
         this.features = features;
         this.picture = picture;
         this.map = map;
+        quests = new ArrayList<>();
 
     }
 

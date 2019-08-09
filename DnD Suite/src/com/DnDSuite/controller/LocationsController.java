@@ -2,6 +2,7 @@ package com.DnDSuite.controller;
 
 import com.DnDSuite.model.CampaignData;
 import com.DnDSuite.model.Location;
+import com.DnDSuite.model.Quest;
 import com.DnDSuite.view.locationsGUI.LocationsGUI;
 
 import javax.swing.*;
@@ -16,7 +17,9 @@ public class LocationsController {
     private JList questsList;
     private JLabel locationPicture;
     private JLabel locationMap;
+    DefaultListModel model;
     DefaultTreeModel treeModel;
+
 
     private CampaignData data;
 
@@ -30,7 +33,11 @@ public class LocationsController {
         this.locationPicture = locationsGUI.getLocationPicture();
         this.locationMap = locationsGUI.getLocationMap();
 
-         this.treeModel = (DefaultTreeModel) locationsTree.getModel();
+        model = new DefaultListModel();
+        this.questsList.setModel(model);
+
+        this.treeModel = (DefaultTreeModel) locationsTree.getModel();
+
 
         setLocationsTree();
         setFields(data.getLocations().get(0).getName());
@@ -60,6 +67,11 @@ public class LocationsController {
         textFields.get("equivalent").setText(String.valueOf(selectedLocation.getEquivalent()));
         textFields.get("climate").setText(String.valueOf(selectedLocation.getClimate()));
         textFields.get("features").setText(String.valueOf(selectedLocation.getFeatures()));
+
+
+        model.removeAllElements();
+        for(Quest q: selectedLocation.getQuests())
+            model.add(model.getSize(), q.getName());
 
 
         if(selectedLocation.getPicture()!=null) {

@@ -65,7 +65,7 @@ public class NpcController {
         }
 
         for(int i = 0; i< locationComboBox.getItemCount(); i++){
-            if(locationComboBox.getItemAt(i).equals(selectedNpc.getLocation()))
+            if(locationComboBox.getItemAt(i).equals(selectedNpc.getLocation().getName()))
                 locationComboBox.setSelectedIndex(i);
         }
 
