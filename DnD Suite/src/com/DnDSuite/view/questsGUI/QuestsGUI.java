@@ -2,10 +2,13 @@ package com.DnDSuite.view.questsGUI;
 
 import com.DnDSuite.controller.QuestController;
 import com.DnDSuite.model.CampaignData;
+import com.DnDSuite.view.questsAddEditGUI.QuestsAddEditGUI;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class QuestsGUI extends JPanel{
     private JPanel rootPanel;
@@ -16,6 +19,7 @@ public class QuestsGUI extends JPanel{
     private JList npcList;
     private JButton addQuestButton;
     private JButton editQuestButton;
+    private QuestController questController;
 
     private CampaignData data;
 
@@ -24,14 +28,36 @@ public class QuestsGUI extends JPanel{
 
         add(rootPanel);
 
-        QuestController questController = new QuestController(this,data);
+        questController = new QuestController(this,data);
 
         questsList.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
-                questController.setFields((String) questsList.getSelectedValue());
+                try {
+                    questController.setFields(String.valueOf(questsList.getSelectedValue()));
+                }
+                catch (NullPointerException n){
+                    //questController.setFields(String.valueOf(data.getQuests().get(0)));
+                    System.err.println("Null Pointer Caught.");
+                }
             }
         });
+
+        addQuestButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                QuestsAddEditGUI questsAddEditGUI = new QuestsAddEditGUI(questController,"Add",String.valueOf(questsList.getSelectedValue()),questsList.getSelectedIndex());
+            }
+        });
+
+
+        editQuestButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                QuestsAddEditGUI questsAddEditGUI = new QuestsAddEditGUI(questController,"Edit",String.valueOf(questsList.getSelectedValue()),questsList.getSelectedIndex());
+            }
+        });
+
     }
 
     public JPanel getRootPanel(){ return this.rootPanel;}
@@ -55,4 +81,6 @@ public class QuestsGUI extends JPanel{
     public JList getNpcList() {
         return npcList;
     }
+
+    public QuestController getQuestController(){return this.questController;}
 }

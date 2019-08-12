@@ -3,8 +3,6 @@ package com.DnDSuite.model;
 import java.util.ArrayList;
 
 public class Quest {
-
-
     private String name;
     private ArrayList<Location> locations;
     private ArrayList<Npc> npcs;
@@ -14,8 +12,8 @@ public class Quest {
         this.name = name;
         this.description = description;
 
-        this.locations=new ArrayList<>();
-        this.npcs = new ArrayList<>();
+        this.locations=new ArrayList<Location>();
+        this.npcs = new ArrayList<Npc>();
     }
 
     public String getName() { return this.name;}

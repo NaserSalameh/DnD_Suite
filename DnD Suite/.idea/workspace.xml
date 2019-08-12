@@ -30,127 +30,144 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/controller/NpcController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="64" column="9" lean-forward="true" selection-start-line="61" selection-start-column="8" selection-end-line="64" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/model/Campaign.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#950#951#0" expanded="true" />
-                <element signature="e#985#986#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/controller/parser/NpcParser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="856">
-              <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/controller/LocationsController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="69" column="34" selection-start-line="69" selection-start-column="34" selection-end-line="69" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/model/Location.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#437#438#0" expanded="true" />
-                <element signature="e#469#470#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/controller/QuestController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/controller/parser/Parser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="471">
-              <caret line="88" column="5" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/view/locationsGUI/LocationsGUI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="636">
-              <caret line="63" column="21" lean-forward="true" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1933#1934#0" expanded="true" />
-                <element signature="e#2020#2021#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/view/locationsGUI/LocationsGUI.form">
-          <provider selected="true" editor-type-id="ui-designer" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/controller/parser/LocationParser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="34" column="37" lean-forward="true" selection-start-line="34" selection-end-line="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/view/frontGUI/FrontGUI.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="255">
+                  <caret line="33" column="25" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="25" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/view/questsAddEditGUI/QuestsAddEditGUI.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="160">
+                  <caret line="77" column="36" selection-start-line="77" selection-start-column="36" selection-end-line="77" selection-end-column="36" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#688#1065#0" expanded="true" />
+                    <element signature="e#1064#1065#0" expanded="true" />
+                    <element signature="e#1113#1490#0" expanded="true" />
+                    <element signature="e#1489#1490#0" expanded="true" />
+                    <element signature="e#1538#1915#0" expanded="true" />
+                    <element signature="e#1914#1915#0" expanded="true" />
+                    <element signature="e#1963#2340#0" expanded="true" />
+                    <element signature="e#2339#2340#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/controller/QuestController.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="176">
+                  <caret line="150" lean-forward="true" selection-start-line="150" selection-end-line="150" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/controller/NpcController.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="160">
+                  <caret line="59" selection-start-line="59" selection-end-line="59" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/controller/parser/NpcParser.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="471">
+                  <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/view/questsGUI/QuestsGUI.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="160">
+                  <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#2273#2274#0" expanded="true" />
+                    <element signature="e#2353#2354#0" expanded="true" />
+                    <element signature="e#2426#2427#0" expanded="true" />
+                    <element signature="e#2509#2510#0" expanded="true" />
+                    <element signature="e#2572#2573#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/view/npcsGUI/NpcsGUI.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="117">
+                  <caret line="53" column="30" selection-start-line="53" selection-start-column="30" selection-end-line="53" selection-end-column="30" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/view/questsGUI/QuestsGUI.form">
+              <provider selected="true" editor-type-id="ui-designer" />
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/model/Quest.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="255">
+                  <caret line="15" column="39" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/view/questsAddEditGUI/QuestsAddEditGUI.form">
+              <provider selected="true" editor-type-id="ui-designer" />
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/controller/NpcController.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="134">
+                  <caret line="112" column="49" selection-start-line="112" selection-start-column="44" selection-end-line="112" selection-end-column="49" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -173,8 +190,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/DnDSuite/controller/parser/RaceParser.java" />
-        <option value="$PROJECT_DIR$/src/com/DnDSuite/controller/parser/ClassParser.java" />
         <option value="$PROJECT_DIR$/src/com/DnDSuite/model/Player.java" />
         <option value="$PROJECT_DIR$/src/com/DnDSuite/view/playersGUI/PlayersGUI.form" />
         <option value="$PROJECT_DIR$/src/com/DnDSuite/view/playersGUI/PlayersGUI.java" />
@@ -189,8 +204,6 @@
         <option value="$PROJECT_DIR$/src/com/DnDSuite/controller/ItemController.java" />
         <option value="$PROJECT_DIR$/src/com/DnDSuite/view/questsGUI/QuestsGUI.form" />
         <option value="$PROJECT_DIR$/src/com/DnDSuite/controller/parser/QuestParse.java" />
-        <option value="$PROJECT_DIR$/src/com/DnDSuite/view/questsGUI/QuestsGUI.java" />
-        <option value="$PROJECT_DIR$/src/com/DnDSuite/model/Quest.java" />
         <option value="$PROJECT_DIR$/src/com/DnDSuite/controller/FrontController.java" />
         <option value="$PROJECT_DIR$/src/com/DnDSuite/controller/Main.java" />
         <option value="$PROJECT_DIR$/src/com/DnDSuite/controller/DiceRollerController.java" />
@@ -217,13 +230,17 @@
         <option value="$PROJECT_DIR$/src/com/DnDSuite/controller/NpcController.java" />
         <option value="$PROJECT_DIR$/src/com/DnDSuite/controller/parser/NpcParser.java" />
         <option value="$PROJECT_DIR$/src/com/DnDSuite/controller/parser/QuestParser.java" />
-        <option value="$PROJECT_DIR$/src/com/DnDSuite/controller/QuestController.java" />
         <option value="$PROJECT_DIR$/src/com/DnDSuite/model/Location.java" />
         <option value="$PROJECT_DIR$/src/com/DnDSuite/model/Campaign.java" />
         <option value="$PROJECT_DIR$/src/com/DnDSuite/controller/parser/LocationParser.java" />
         <option value="$PROJECT_DIR$/src/com/DnDSuite/view/locationsGUI/LocationsGUI.java" />
         <option value="$PROJECT_DIR$/src/com/DnDSuite/view/locationsGUI/LocationsGUI.form" />
         <option value="$PROJECT_DIR$/src/com/DnDSuite/controller/LocationsController.java" />
+        <option value="$PROJECT_DIR$/src/com/DnDSuite/view/questsAddEditGUI/QuestsAddEditGUI.form" />
+        <option value="$PROJECT_DIR$/src/com/DnDSuite/view/questsAddEditGUI/QuestsAddEditGUI.java" />
+        <option value="$PROJECT_DIR$/src/com/DnDSuite/model/Quest.java" />
+        <option value="$PROJECT_DIR$/src/com/DnDSuite/controller/QuestController.java" />
+        <option value="$PROJECT_DIR$/src/com/DnDSuite/view/questsGUI/QuestsGUI.java" />
       </list>
     </option>
   </component>
@@ -299,14 +316,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="DnDSuite" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="campaignGUI" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DnD Suite" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DnD Suite" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="DnDSuite" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
               <item name="frontGUI" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -315,7 +324,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="DnDSuite" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="locationsGUI" type="462c0819:PsiDirectoryNode" />
+              <item name="npcsGUI" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DnD Suite" type="b2602c69:ProjectViewProjectNode" />
@@ -323,8 +332,42 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="DnDSuite" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="locationsGUI" type="462c0819:PsiDirectoryNode" />
-              <item name="LocationsGUI" type="e9f4de52:FormNode" />
+              <item name="npcsGUI" type="462c0819:PsiDirectoryNode" />
+              <item name="NpcsGUI" type="e9f4de52:FormNode" />
+            </path>
+            <path>
+              <item name="DnD Suite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DnD Suite" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DnDSuite" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="questsAddEditGUI" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DnD Suite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DnD Suite" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DnDSuite" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="questsAddEditGUI" type="462c0819:PsiDirectoryNode" />
+              <item name="QuestsAddEditGUI" type="e9f4de52:FormNode" />
+            </path>
+            <path>
+              <item name="DnD Suite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DnD Suite" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DnDSuite" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="questsGUI" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DnD Suite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DnD Suite" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DnDSuite" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="questsGUI" type="462c0819:PsiDirectoryNode" />
+              <item name="QuestsGUI" type="e9f4de52:FormNode" />
             </path>
             <path>
               <item name="DnD Suite" type="b2602c69:ProjectViewProjectNode" />
@@ -442,12 +485,12 @@
       <workItem from="1563198145699" duration="8725000" />
       <workItem from="1565101434379" duration="3485000" />
       <workItem from="1565208787709" duration="5003000" />
-      <workItem from="1565223997274" duration="33887000" />
+      <workItem from="1565223997274" duration="40428000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167974000" />
+    <option name="totallyTimeSpent" value="174515000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -523,26 +566,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/view/initiativeGUI/InitiativeGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="34" column="88" lean-forward="true" selection-start-line="34" selection-start-column="88" selection-end-line="34" selection-end-column="88" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/model/Npc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="66" column="28" selection-start-line="66" selection-start-column="28" selection-end-line="66" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/view/npcsGUI/NpcGUI.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
@@ -556,30 +579,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/view/questsGUI/QuestsGUI.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/view/itemsGUI/ItemsGUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
           <caret line="35" column="34" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/model/Quest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/view/questsGUI/QuestsGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="26" column="46" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -695,16 +698,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/view/loaderGUI/LoaderGUI.form">
       <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/view/frontGUI/FrontGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="39" column="86" lean-forward="true" selection-start-line="38" selection-start-column="16" selection-end-line="39" selection-end-column="86" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/controller/writer/ClassWriter.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -863,30 +856,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/view/npcsGUI/NpcsGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="53" column="30" selection-start-line="53" selection-start-column="30" selection-end-line="53" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/controller/parser/QuestParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
           <caret line="57" column="48" selection-start-line="57" selection-start-column="48" selection-end-line="57" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/controller/QuestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -905,26 +878,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/controller/parser/NpcParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="856">
-          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/controller/NpcController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="64" column="9" lean-forward="true" selection-start-line="61" selection-start-column="8" selection-end-line="64" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/model/Location.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
@@ -939,18 +892,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/view/locationsGUI/LocationsGUI.form">
       <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/view/locationsGUI/LocationsGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="636">
-          <caret line="63" column="21" lean-forward="true" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1933#1934#0" expanded="true" />
-            <element signature="e#2020#2021#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/controller/parser/Parser.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -972,10 +913,118 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/view/locationsGUI/LocationsGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="789">
+          <caret line="63" column="21" lean-forward="true" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1933#1934#0" expanded="true" />
+            <element signature="e#2020#2021#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/controller/LocationsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="69" column="34" selection-start-line="69" selection-start-column="34" selection-end-line="69" selection-end-column="34" />
+        <state relative-caret-position="417">
+          <caret line="83" selection-start-line="83" selection-end-line="83" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/view/questsAddEditGUI/QuestsAddEditGUI.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/view/questsGUI/QuestsGUI.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/view/frontGUI/FrontGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="33" column="25" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/controller/parser/NpcParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="471">
+          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/model/Quest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="39" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/view/npcsGUI/NpcsGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="53" column="30" selection-start-line="53" selection-start-column="30" selection-end-line="53" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/view/questsGUI/QuestsGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2273#2274#0" expanded="true" />
+            <element signature="e#2353#2354#0" expanded="true" />
+            <element signature="e#2426#2427#0" expanded="true" />
+            <element signature="e#2509#2510#0" expanded="true" />
+            <element signature="e#2572#2573#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/view/questsAddEditGUI/QuestsAddEditGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="77" column="36" selection-start-line="77" selection-start-column="36" selection-end-line="77" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#688#1065#0" expanded="true" />
+            <element signature="e#1064#1065#0" expanded="true" />
+            <element signature="e#1113#1490#0" expanded="true" />
+            <element signature="e#1489#1490#0" expanded="true" />
+            <element signature="e#1538#1915#0" expanded="true" />
+            <element signature="e#1914#1915#0" expanded="true" />
+            <element signature="e#1963#2340#0" expanded="true" />
+            <element signature="e#2339#2340#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/controller/QuestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="150" lean-forward="true" selection-start-line="150" selection-end-line="150" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/DnDSuite/controller/NpcController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
