@@ -8,6 +8,8 @@ import com.DnDSuite.view.locationsGUI.LocationsGUI;
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
+import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.HashMap;
 
 public class LocationsController {
@@ -17,6 +19,7 @@ public class LocationsController {
     private JList questsList;
     private JLabel locationPicture;
     private JLabel locationMap;
+    private JComboBox withinComboBox;
     DefaultListModel model;
     DefaultTreeModel treeModel;
 
@@ -32,6 +35,7 @@ public class LocationsController {
         this.questsList = locationsGUI.getQuestsList();
         this.locationPicture = locationsGUI.getLocationPicture();
         this.locationMap = locationsGUI.getLocationMap();
+        this.withinComboBox = locationsGUI.getWithinComboBox();
 
         model = new DefaultListModel();
         this.questsList.setModel(model);
@@ -40,20 +44,43 @@ public class LocationsController {
 
 
         setLocationsTree();
+        initialiseComboBoxes();
         setFields(data.getLocations().get(0).getName());
     }
 
     private void setLocationsTree(){
-       DefaultMutableTreeNode world = new DefaultMutableTreeNode(data.getLocations().get(0).getName());
+        DefaultMutableTreeNode world = new DefaultMutableTreeNode(data.getLocations().get(0).getName());
         treeModel.setRoot(world);
 
-        //better nesting needed
-        for(int i=1;i<data.getLocations().size();i++){
-//            if(data.getLocations().get(i).getWithin().getName().equals(world.toString())) {
-                DefaultMutableTreeNode node = new DefaultMutableTreeNode(data.getLocations().get(i).getName());
-                treeModel.insertNodeInto(node, world, world.getChildCount());
-  //          }
-        }
+        ArrayList<Location> locations =new ArrayList<>();
+
+        for(Location l: data.getLocations())
+            locations.add(l);
+
+        locations.remove(0);
+
+        Enumeration e = world.breadthFirstEnumeration();
+
+            while(!locations.isEmpty()) {
+                while (e.hasMoreElements()) {
+                    DefaultMutableTreeNode currentNode = (DefaultMutableTreeNode) e.nextElement();
+                    System.out.println("NODE: "+ currentNode);
+                    for (int i = 0; i < locations.size(); i++) {
+                        if (locations.get(i).getWithin().getName().equals(String.valueOf(currentNode))) {
+                            currentNode.add(new DefaultMutableTreeNode(locations.get(i).getName()));
+                            locations.remove(i);
+                        }
+                    }
+                }
+                e=world.breadthFirstEnumeration();
+            }
+    }
+
+    private void initialiseComboBoxes(){
+
+        for (int i = 0; i < data.getLocations().size(); i++)
+            withinComboBox.addItem(data.getLocations().get(i).getName());
+
     }
 
     public void setFields(String locationName){
@@ -64,10 +91,18 @@ public class LocationsController {
                 selectedLocation = l;
 
         textFields.get("location").setText(selectedLocation.getName());
+
+        if(selectedLocation.getWithin()!=null)
+            for(int i = 0; i< withinComboBox.getItemCount(); i++) {
+            if (withinComboBox.getItemAt(i).equals(selectedLocation.getWithin().getName()))
+                withinComboBox.setSelectedIndex(i);
+            }
+        else
+            withinComboBox.setSelectedIndex(0);
+
         textFields.get("equivalent").setText(String.valueOf(selectedLocation.getEquivalent()));
         textFields.get("climate").setText(String.valueOf(selectedLocation.getClimate()));
         textFields.get("features").setText(String.valueOf(selectedLocation.getFeatures()));
-
 
         model.removeAllElements();
         for(Quest q: selectedLocation.getQuests())
@@ -86,40 +121,38 @@ public class LocationsController {
         else
             locationMap.setIcon(null);
 
-//        DefaultListModel model = (DefaultListModel) questsList.getModel();
-//        for(Quest q: selectedLocation.getQuests())
-//            model.add(model.getSize(),q.getName());
-//
-
     }
 
     private Location createLocation(){
-        String name = textFields.get("name").getText(),
+        String name = textFields.get("location").getText(),
                 equivalent = textFields.get("equivalent").getText(),
                 climate = textFields.get("climate").getText(),
                 features = textFields.get("features").getText();
 
-        Location newLocation = new Location(name,equivalent,climate,features);
+        Location within = null;
+        for(Location l : data.getLocations())
+            if(l.getName().equals(withinComboBox.getSelectedIndex()))
+                within = l;
+
+        Location newLocation = new Location(name,within,equivalent,climate,features);
 
         return newLocation;
     }
 
-    public void newLocation(DefaultMutableTreeNode within){
+    public void newLocation(){
         Location newLocation = createLocation();
 
-        for(Location l : data.getLocations())
-            if(l.getName().equals(within.getUserObject()))
-                newLocation.setWithin(l);
+        DefaultMutableTreeNode root = (DefaultMutableTreeNode) treeModel.getRoot();
+        Enumeration e = root.breadthFirstEnumeration();
+        while(e.hasMoreElements()) {
+            DefaultMutableTreeNode currentNode = (DefaultMutableTreeNode) e.nextElement();
+            if (currentNode.equals(newLocation.getWithin().getName()));
+                currentNode.add(new DefaultMutableTreeNode(newLocation.getName()));
+        }
 
-        data.getLocations().add(newLocation);
-
-        DefaultMutableTreeNode node = new DefaultMutableTreeNode(newLocation.getName());
-        treeModel.insertNodeInto(node, within, within.getChildCount());
     }
 
-    public void editLocation(String locationName,DefaultMutableTreeNode locationNode, DefaultMutableTreeNode within){
-
-        Location newLocation = createLocation();
+    public void removeLocation(String locationName, DefaultMutableTreeNode locationNode){
 
         for(Location l : data.getLocations())
             if(l.getName().equals(locationName)) {
@@ -127,14 +160,9 @@ public class LocationsController {
                 treeModel.removeNodeFromParent(locationNode);
             }
 
-        for(Location l : data.getLocations())
-            if(l.getName().equals(within.getUserObject()))
-                newLocation.setWithin(l);
-        data.getLocations().add(newLocation);
-
-        DefaultMutableTreeNode node = new DefaultMutableTreeNode(newLocation.getName());
-        treeModel.insertNodeInto(node, within, within.getChildCount());
-
     }
+
+
+
 
 }

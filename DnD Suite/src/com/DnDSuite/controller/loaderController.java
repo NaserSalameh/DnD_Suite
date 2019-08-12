@@ -3,7 +3,7 @@ package com.DnDSuite.controller;
 import javax.swing.*;
 import java.io.File;
 
-public class loaderController {
+public class LoaderController {
 
     JFileChooser fileChooser = new JFileChooser();
     JFileChooser folderChooser = new JFileChooser();

@@ -21,6 +21,8 @@ public class Campaign {
         this.campaignName = campaignName;
 
         this.data = new CampaignData(campaignName);
+       // this.data.getLocations().add(new Location(campaignName+" World"));
+
         this.dataFile = dataFile;
 
         try {

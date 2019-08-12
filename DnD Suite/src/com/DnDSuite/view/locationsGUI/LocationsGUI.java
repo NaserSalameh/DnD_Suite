@@ -6,6 +6,9 @@ import com.DnDSuite.model.CampaignData;
 import javax.swing.*;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
+import javax.swing.tree.DefaultMutableTreeNode;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.HashMap;
 
 public class LocationsGUI extends JPanel{
@@ -19,9 +22,10 @@ public class LocationsGUI extends JPanel{
     private JList questsList;
     private JLabel questsJList;
     private JLabel locationPortrait;
-    private JButton editButton;
+    private JButton removeButton;
     private JButton addButton;
     private JLabel locationMap;
+    private JComboBox withinComboBox;
     private HashMap<String,JTextField> textFields;
 
     private CampaignData data;
@@ -48,13 +52,20 @@ public class LocationsGUI extends JPanel{
                 locationsController.setFields(selectedLocation);
             }
         });
-//
-//        addButton.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                locationsController.newLocation((DefaultMutableTreeNode) locationsTree.getLastSelectedPathComponent());
-//            }
-//        });
+
+        addButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                locationsController.newLocation();
+            }
+        });
+
+        removeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                locationsController.removeLocation(locationJTextField.getText(),(DefaultMutableTreeNode) locationsTree.getLastSelectedPathComponent());
+            }
+        });
 
     }
 
@@ -63,6 +74,8 @@ public class LocationsGUI extends JPanel{
     public JTree getLocationsTree(){ return this.locationsTree;}
 
     public HashMap<String, JTextField> getTextFields(){ return this.textFields;}
+
+    public JComboBox getWithinComboBox(){return this.withinComboBox;}
 
     public JList getQuestsList(){ return this.questsList;}
 

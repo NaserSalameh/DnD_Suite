@@ -15,6 +15,11 @@ public class Location {
     private BufferedImage picture;
     private BufferedImage map;
 
+
+    public Location(String name) {
+        this.name = name;
+    }
+
     public Location(String name,Location Within, String equivalent, String climate, String features){
 
         this.name = name;
@@ -47,6 +52,7 @@ public class Location {
         quests = new ArrayList<>();
 
     }
+
 
     public String getName(){ return this.name; }
 

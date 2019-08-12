@@ -1,6 +1,6 @@
 package com.DnDSuite.view.loaderGUI;
 
-import com.DnDSuite.controller.loaderController;
+import com.DnDSuite.controller.LoaderController;
 import com.DnDSuite.controller.parser.ImageParser;
 import com.DnDSuite.controller.writer.Writer;
 import com.DnDSuite.model.Campaign;
@@ -23,7 +23,7 @@ public class LoaderGUI extends JPanel {
 
         add(rootPanel);
 
-        loaderController loaderController = new loaderController();
+        LoaderController loaderController = new LoaderController();
 
         loadCampaignButton.addActionListener(new ActionListener() {
             @Override

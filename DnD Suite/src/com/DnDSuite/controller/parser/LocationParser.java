@@ -34,7 +34,8 @@ public class LocationParser {
             Location newLocation = new Location(rowCells[0], rowCells[2], rowCells[3], rowCells[4]);
             locations.add(newLocation);
         }
-        System.out.println("Parsed Locations...");
+
+            System.out.println("Parsed Locations...");
         return locations;
     }
 
@@ -48,8 +49,6 @@ public class LocationParser {
                 if (l.getName().equals(String.valueOf(row.getCell(0))))
                     tempLocation = l;
             }
-
-
 
             if(!row.getCell(1).equals("None")) {
 
@@ -74,6 +73,7 @@ public class LocationParser {
                 }
             }
         }
+
         System.out.println("Parsed Locations-Within...");
         System.out.println("Parsed Locations-Quests...");
     }

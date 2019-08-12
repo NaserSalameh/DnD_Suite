@@ -1,6 +1,6 @@
 package com.DnDSuite.view.frontGUI;
 
-import com.DnDSuite.controller.loaderController;
+import com.DnDSuite.controller.LoaderController;
 import com.DnDSuite.model.Campaign;
 
 import javax.swing.*;
@@ -30,7 +30,7 @@ public class FrontGUI extends JFrame{
         selectFile = new JButton("Select File");
         rootPanel.add(selectFile);
 
-        loaderController loaderController = new loaderController();
+        LoaderController loaderController = new LoaderController();
         setVisible(true);
 
         selectFile.addActionListener(new ActionListener() {
