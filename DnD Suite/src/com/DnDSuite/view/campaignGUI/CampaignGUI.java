@@ -35,7 +35,7 @@ public class CampaignGUI extends JFrame {
         //rootPanel = new JPanel();
         //add(rootPanel);
         setTitle("DnD Suite: " + campaign.getCampaignName());
-        setSize(800,500);
+        setSize(1000,700);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         tabbedPane = new JTabbedPane();

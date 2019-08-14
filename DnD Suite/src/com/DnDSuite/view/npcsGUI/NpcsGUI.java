@@ -19,7 +19,6 @@ public class NpcsGUI extends JPanel{
     private JButton editButton;
     private JPanel npcInfo;
     private JTextPane npcRole;
-    private JPanel npcInfo2;
     private JPanel npcRoleLabel;
     private JTextField nameTextField;
     private JTextField sessionTextField;
