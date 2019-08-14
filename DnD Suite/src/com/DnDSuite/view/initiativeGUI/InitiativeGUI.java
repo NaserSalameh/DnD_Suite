@@ -27,6 +27,8 @@ public class InitiativeGUI extends JPanel{
     private JButton healthButton;
     private JTextField healthTextField;
     private JTextField npcHealthTextField;
+    private JButton healButton;
+    private JButton hitButton;
 
 
     public InitiativeGUI(ArrayList<Player> players){
@@ -75,10 +77,17 @@ public class InitiativeGUI extends JPanel{
             }
         });
 
-        healthButton.addActionListener(new ActionListener() {
+        hitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                initiativeController.playerHit(playersInCombat,healthTextField.getText());
+                initiativeController.playerHitAndHeal(playersInCombat,healthTextField.getText(),"Hit");
+            }
+        });
+
+        healButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                initiativeController.playerHitAndHeal(playersInCombat,healthTextField.getText(),"Heal");
             }
         });
     }

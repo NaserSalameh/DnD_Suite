@@ -51,7 +51,8 @@ public class NpcsGUI extends JPanel{
         npcsList.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
-                npcController.setFields((String) npcsList.getSelectedValue());
+                if(npcsList.getSelectedIndex()!=-1)
+                    npcController.setFields(String.valueOf(npcsList.getSelectedValue()));
             }
         });
 
@@ -65,7 +66,7 @@ public class NpcsGUI extends JPanel{
         editButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                npcController.editNpc(nameTextField.getText(),npcsList.getSelectedIndex());
+                npcController.editNpc(String.valueOf(npcsList.getSelectedValue()),npcsList.getSelectedIndex());
             }
         });
 

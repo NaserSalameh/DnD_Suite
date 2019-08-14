@@ -33,13 +33,8 @@ public class QuestsGUI extends JPanel{
         questsList.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
-                try {
+                if(questsList.getSelectedIndex()!=-1)
                     questController.setFields(String.valueOf(questsList.getSelectedValue()));
-                }
-                catch (NullPointerException n){
-                    //questController.setFields(String.valueOf(data.getQuests().get(0)));
-                    System.err.println("Null Pointer Caught.");
-                }
             }
         });
 

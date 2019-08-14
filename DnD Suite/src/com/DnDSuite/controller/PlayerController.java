@@ -17,6 +17,7 @@ public class PlayerController {
         private JComboBox classComboBox;
         private JComboBox subClassComboBox;
 
+        private JProgressBar progressBar;
         private JLabel playerPortrait;
 
         private CampaignData data;
@@ -31,6 +32,7 @@ public class PlayerController {
             this.classComboBox = playersGUI.getClassComboBox();
             this.subClassComboBox = playersGUI.getSubClassComboBox();
 
+            this.progressBar=playersGUI.getExpProgressBar();
             this.playerPortrait = playersGUI.getPlayerPortrait();
 
             model = new DefaultListModel();
@@ -68,7 +70,7 @@ public class PlayerController {
             Player selectedPlayer = null;
 
             for(Player p: data.getPlayers())
-                if(p.getName().equals(playerName))
+                if (p.getName().equals(playerName))
                     selectedPlayer = p;
 
             textFields.get("name").setText(selectedPlayer.getName());
@@ -98,11 +100,14 @@ public class PlayerController {
             textFields.get("speed").setText(String.valueOf(selectedPlayer.getStat().getSpeed()));
             textFields.get("initiative").setText(String.valueOf(selectedPlayer.getStat().getInitiative()));
 
+            setProgressBar(selectedPlayer.getName());
+
             if(selectedPlayer.getPortrait()!=null) {
                 playerPortrait.setIcon(new ImageIcon(selectedPlayer.getPortrait()));
             }
             else
                 playerPortrait.setIcon(null);
+
         }
 
 
@@ -135,26 +140,27 @@ public class PlayerController {
     public void newPlayer(){
         Player newPlayer = createPlayer();
 
-        //will be changed to data file
         data.getPlayers().add(newPlayer);
-        model.add(model.getSize(),newPlayer);
+        model.add(model.getSize(),newPlayer.getName());
+        playerList.setSelectedIndex(0);
     }
 
     public void editPlayer(String playerName, int index){
 
-        Player newPlayer = createPlayer();
-            for(Player p: data.getPlayers())
-            if(p.getName().equals(playerName)) {
-                data.getPlayers().remove(p);
-                model.remove(index);
-            }
+        newPlayer();
 
-            data.getPlayers().add(newPlayer);
-            model.add(model.getSize(),newPlayer);
+        Player temp = null;
 
+        System.out.println(playerName);
+        for(Player p: data.getPlayers())
+            if(p.getName().equals(playerName))
+                temp = p;
+
+        data.getPlayers().remove(temp);
+        model.remove(index);
     }
 
-    public void setProgressBar(JProgressBar progressBar, String playerName) {
+    public void setProgressBar(String playerName) {
 
             Player selectedPlayer = null;
 

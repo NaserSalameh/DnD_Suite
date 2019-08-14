@@ -111,15 +111,17 @@ public class ItemController {
 
     public void editItem(String itemName, int index) {
 
-        Item newItem = createItem();
+        newItem();
+
+        Item temp = null;
 
         for (Item i : data.getItems())
             if (i.getName().equals(itemName)) {
-                data.getItems().remove(i);
-                model.remove(index);
+                temp = i;
             }
 
-        data.getItems().add(newItem);
-        model.add(model.getSize(), newItem);
+        data.getItems().remove(temp);
+        model.remove(index);
+
     }
 }

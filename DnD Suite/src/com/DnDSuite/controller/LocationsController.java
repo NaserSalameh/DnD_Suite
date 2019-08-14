@@ -64,7 +64,6 @@ public class LocationsController {
             while(!locations.isEmpty()) {
                 while (e.hasMoreElements()) {
                     DefaultMutableTreeNode currentNode = (DefaultMutableTreeNode) e.nextElement();
-                    System.out.println("NODE: "+ currentNode);
                     for (int i = 0; i < locations.size(); i++) {
                         if (locations.get(i).getWithin().getName().equals(String.valueOf(currentNode))) {
                             currentNode.add(new DefaultMutableTreeNode(locations.get(i).getName()));

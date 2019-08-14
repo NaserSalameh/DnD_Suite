@@ -51,18 +51,23 @@ public class InitiativeController {
     }
 
     public void nextTurn(DefaultTableModel model){
+
         model.moveRow(1,1, model.getRowCount()-1);
     }
 
-    public void playerHit(JTable playersInCombat, String healthModifier) {
+    public void playerHitAndHeal(JTable playersInCombat, String healthModifier, String operation) {
 
         DefaultTableModel model = (DefaultTableModel) playersInCombat.getModel();
 
         int row = playersInCombat.getSelectedRow(), col = 2;
-        int newHealth;
+        int newHealth = Integer.parseInt(String.valueOf(model.getValueAt(row,2)));
 
         //both + and - work
-        newHealth = Integer.parseInt((String) model.getValueAt(row,2)) + Integer.parseInt(healthModifier);
+        if(operation.equals("Hit"))
+            newHealth = newHealth - Integer.parseInt(healthModifier);
+        else if(operation.equals("Heal"))
+            newHealth = newHealth + Integer.parseInt(healthModifier);
+
         model.setValueAt(String.valueOf(newHealth),row,col);
     }
 }

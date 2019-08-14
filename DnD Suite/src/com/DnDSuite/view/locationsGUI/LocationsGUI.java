@@ -48,8 +48,10 @@ public class LocationsGUI extends JPanel{
         locationsTree.addTreeSelectionListener(new TreeSelectionListener() {
             @Override
             public void valueChanged(TreeSelectionEvent e) {
-                String selectedLocation =locationsTree.getLastSelectedPathComponent().toString();
-                locationsController.setFields(selectedLocation);
+                if(locationsTree.getLastSelectedPathComponent()!=null) {
+                    String selectedLocation = locationsTree.getLastSelectedPathComponent().toString();
+                    locationsController.setFields(selectedLocation);
+                }
             }
         });
 

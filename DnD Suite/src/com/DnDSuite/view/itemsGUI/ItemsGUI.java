@@ -40,7 +40,7 @@ public class ItemsGUI extends JPanel{
         itemsList.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
-                itemController.setFields((String) itemsList.getSelectedValue());
+                itemController.setFields(String.valueOf(itemsList.getSelectedValue()));
             }
         });
 
@@ -54,7 +54,7 @@ public class ItemsGUI extends JPanel{
         editButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                itemController.editItem(nameTextField.getText(),itemsList.getSelectedIndex());
+                itemController.editItem(String.valueOf(itemsList.getSelectedValue()),itemsList.getSelectedIndex());
             }
         });
 

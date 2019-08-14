@@ -72,8 +72,9 @@ public class PlayersGUI extends JPanel {
         playersList.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
-                playerController.setFields((String) playersList.getSelectedValue());
-                playerController.setProgressBar(expProgressBar, (String) playersList.getSelectedValue());
+                if(playersList.getSelectedIndex()!=-1)
+                playerController.setFields((String.valueOf(playersList.getSelectedValue())));
+
             }
         });
 
@@ -88,15 +89,13 @@ public class PlayersGUI extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 playerController.newPlayer();
-                model.add(model.getSize(), nameTextField.getText());
             }
         });
 
         editButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-                playerController.editPlayer(nameTextField.getText(),playersList.getSelectedIndex());
+                playerController.editPlayer(String.valueOf(playersList.getSelectedValue()),playersList.getSelectedIndex());
             }
         });
     }
@@ -114,4 +113,6 @@ public class PlayersGUI extends JPanel {
     public HashMap<String, JTextField> getTextfields(){ return this.textFields;}
 
     public JLabel getPlayerPortrait() { return  this.playerPortrait;}
+
+    public JProgressBar getExpProgressBar(){ return this.expProgressBar;}
 }
