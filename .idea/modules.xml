@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/DnD_Suite.iml" filepath="$PROJECT_DIR$/.idea/DnD_Suite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DnD Suite.iml" filepath="$PROJECT_DIR$/DnD Suite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../DnD_Suite.iml" filepath="$PROJECT_DIR$/../DnD_Suite.iml" />
     </modules>
   </component>
 </project>

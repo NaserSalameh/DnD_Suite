@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="random.org-client">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/libs/random.org-simpleclient-master/random.org-simpleclient-master/random.org-client.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
