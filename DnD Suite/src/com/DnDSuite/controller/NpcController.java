@@ -38,7 +38,7 @@ public class NpcController {
             model.add(model.getSize(),n.getName());
 
         initialiseComboBoxes();
-        setFields(data.getNpcs().get(0).getName());
+        //setFields(data.getNpcs().get(0).getName());
     }
 
     private void initialiseComboBoxes(){

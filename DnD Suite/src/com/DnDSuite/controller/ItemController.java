@@ -38,8 +38,7 @@ public class ItemController {
             model.add(model.getSize(),i.getName());
 
         initialiseComboBoxes();
-        setFields(data.getItems().get(0).getName());
-
+        //setFields(data.getItems().get(0).getName());
     }
 
     private void initialiseComboBoxes(){

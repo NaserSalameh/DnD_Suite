@@ -54,7 +54,7 @@ public class QuestController {
         for(Quest q: data.getQuests())
             questsModel.add(questsModel.getSize(), q.getName());
 
-        setFields(data.getQuests().get(0).getName());
+        //setFields(data.getQuests().get(0).getName());
     }
 
     public void setFields(String questName) {

@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.HashMap;
 
-public class LocationsController {
+public class LocationController {
 
     private JTree locationsTree;
     private HashMap<String, JTextField> textFields;
@@ -26,7 +26,7 @@ public class LocationsController {
 
     private CampaignData data;
 
-    public LocationsController(LocationsGUI locationsGUI, CampaignData data){
+    public LocationController(LocationsGUI locationsGUI, CampaignData data){
 
         this.data = data;
 
@@ -45,10 +45,13 @@ public class LocationsController {
 
         setLocationsTree();
         initialiseComboBoxes();
-        setFields(data.getLocations().get(0).getName());
+        //setFields(data.getLocations().get(0).getName());
     }
 
     private void setLocationsTree(){
+        if(data.getLocations().size()==0)
+            data.getLocations().add(new Location("World"));
+
         DefaultMutableTreeNode world = new DefaultMutableTreeNode(data.getLocations().get(0).getName());
         treeModel.setRoot(world);
 

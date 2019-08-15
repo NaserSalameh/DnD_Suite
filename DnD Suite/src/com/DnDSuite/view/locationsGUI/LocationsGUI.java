@@ -1,6 +1,6 @@
 package com.DnDSuite.view.locationsGUI;
 
-import com.DnDSuite.controller.LocationsController;
+import com.DnDSuite.controller.LocationController;
 import com.DnDSuite.model.CampaignData;
 
 import javax.swing.*;
@@ -43,7 +43,7 @@ public class LocationsGUI extends JPanel{
         textFields.put("climate", climateJTextField);
         textFields.put("features", featuresJTextField);
 
-        LocationsController locationsController = new LocationsController(this, data);
+        LocationController locationsController = new LocationController(this, data);
 
         locationsTree.addTreeSelectionListener(new TreeSelectionListener() {
             @Override

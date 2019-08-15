@@ -43,7 +43,7 @@ public class PlayerController {
             }
 
             initialiseComboBoxes();
-            setFields(data.getPlayers().get(0).getName());
+            //setFields(data.getPlayers().get(0).getName());
         }
 
         private void initialiseComboBoxes(){

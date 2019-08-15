@@ -7,7 +7,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.Enumeration;
 
 public class RollButtonListener implements ActionListener {
 
@@ -120,10 +119,39 @@ public class RollButtonListener implements ActionListener {
                 break;
         }
 
-        String resultText = "Rolled "+numOfRollsArr[0]+"d2, " + numOfRollsArr[1]+"d4, " + numOfRollsArr[2]+"d6, "+
-                numOfRollsArr[3]+"d8, " + numOfRollsArr[4]+"d10, " + numOfRollsArr[5]+"d12, " + numOfRollsArr[6]+"d20, "+
-                numOfRollsArr[7]+"d100."+
-                "\nResult: " + sum.toString() + " "+ modifierOP +" "+(modifierTextField.getText() + "= " +newSum.toString() +"\nAverage: " + avg);
+        String resultText="Rolled ";
+        for(int i=0;i<numOfRollsArr.length;i++){
+            if(numOfRollsArr[i]!=0) {
+                resultText += numOfRollsArr[i];
+                switch (i) {
+                    case 0:
+                        resultText += "d2. ";
+                        break;
+                    case 1:
+                        resultText += "d4. ";
+                        break;
+                    case 2:
+                        resultText += "d6. ";
+                        break;
+                    case 3:
+                        resultText += "d8. ";
+                        break;
+                    case 4:
+                        resultText += "d10. ";
+                        break;
+                    case 5:
+                        resultText += "d12. ";
+                        break;
+                    case 6:
+                        resultText += "d20. ";
+                        break;
+                    case 7:
+                        resultText += "d100. ";
+                        break;
+                }
+            }
+        }
+         resultText+= "\nResult: " + sum.toString() + " "+ modifierOP +" "+(modifierTextField.getText() + "= " +newSum.toString() +"\nAverage: " + avg);
 
         resultDisplay.setText(resultText);
 

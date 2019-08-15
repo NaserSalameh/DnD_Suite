@@ -16,12 +16,18 @@ public class Campaign {
     private File dataFile;
     private Workbook workbook;
 
+    public Campaign(String campaignName){
+        this.campaignName = campaignName;
+        this.data = new CampaignData(campaignName);
+
+        setup();
+    }
+
     public Campaign(String campaignName,File dataFile) {
 
         this.campaignName = campaignName;
 
         this.data = new CampaignData(campaignName);
-       // this.data.getLocations().add(new Location(campaignName+" World"));
 
         this.dataFile = dataFile;
 
@@ -32,6 +38,10 @@ public class Campaign {
             e.printStackTrace();
         }
 
+        setup();
+    }
+
+    private void setup(){
         CampaignGUI campaignGUI= new CampaignGUI(this);
         campaignGUI.setVisible(true);
     }

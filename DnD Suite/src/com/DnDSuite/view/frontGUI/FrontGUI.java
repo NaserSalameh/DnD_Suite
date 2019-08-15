@@ -1,19 +1,10 @@
 package com.DnDSuite.view.frontGUI;
 
-import com.DnDSuite.controller.LoaderController;
-import com.DnDSuite.model.Campaign;
-
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.File;
 
 public class FrontGUI extends JFrame{
 
-    private JPanel rootPanel;
-    private JButton selectFile;
-    private JTextArea textArea;
+    private FrontGUIPanel frontGUIPanel;
 
     public FrontGUI(){
 
@@ -21,26 +12,10 @@ public class FrontGUI extends JFrame{
         setSize(800,500);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        rootPanel = new JPanel(new GridLayout(2,1));
-        add(rootPanel);
+        frontGUIPanel = new FrontGUIPanel(this);
+        add(frontGUIPanel.getRootPanel());
 
-        textArea = new JTextArea("Welcome!");
-        rootPanel.add(textArea);
-
-        selectFile = new JButton("Select File");
-        rootPanel.add(selectFile);
-
-        LoaderController loaderController = new LoaderController();
         setVisible(true);
-
-        selectFile.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                File campaignFile = loaderController.selectFile();
-                Campaign campaign = new Campaign(campaignFile.getName(),campaignFile);
-                dispose();
-            }
-        });
 
     }
 

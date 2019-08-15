@@ -10,14 +10,6 @@ public class DiceRollerGUI extends JPanel{
     private JTextPane resultDisplay;
 
     private JPanel dicePanel;
-    private JPanel D2;
-    private JPanel D4;
-    private JPanel D6;
-    private JPanel D8;
-    private JPanel D10;
-    private JPanel D12;
-    private JPanel D20;
-    private JPanel D100;
     private JTextField d2TextField;
     private JButton RollButton;
     private JTextField d4TextField;
@@ -27,8 +19,6 @@ public class DiceRollerGUI extends JPanel{
     private JTextField d8TextField;
     private JTextField d12TextField;
     private JTextField d100TextField;
-    private JPanel diceRollerPanel;
-    private JPanel RollButtonPanel;
 
     private JPanel modifierPanel;
     private JTextField modifierTextField;
